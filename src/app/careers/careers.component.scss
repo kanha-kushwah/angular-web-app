@@ -1,0 +1,77 @@
+
+.row.align-items-center.height {
+  min-height: 300px;
+  text-align: center;
+}
+.img-butter img {
+position: absolute;
+left: 28%;
+width: 46%;
+top: -169%;
+}
+
+.col-lg-8.align-self-center h2 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 54px;
+  line-height: 97.16%;
+  color: #F5F7F7;
+}
+.Site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.img-butter{
+  position: relative;
+}
+
+.Site-content {
+  flex: 1;
+}
+.col-lg-2.align-self-center.ps-0.text-left {
+  text-align: left;
+}
+.col-lg-2.align-self-center.pe-0.text-right {
+text-align: end;
+}
+
+@media (max-width:1024px){
+img.img-butter {
+  position: absolute;
+  left: 20%;
+  top: 127px;
+}
+}
+
+@media(max-width:768px){
+  .row.align-items-center.height{
+    height: 250px !important;
+    text-align: center;
+}
+
+section.career1.h-100vh {
+  background-size: contain !important;
+  min-height: 252px !important;
+}
+.col-lg-8.align-self-center h2{
+font-style: normal;
+font-weight: 400;
+font-size: 35px;
+line-height: 83.16%;
+color: #F5F7F7;
+}
+.text-right img {
+  width: 100px;
+  position: absolute;
+  right: 0;
+  top: 16%;
+}
+.text-left img {
+width: 100px;
+position: absolute;
+left: 0;
+top: 16%;
+}
+
+}

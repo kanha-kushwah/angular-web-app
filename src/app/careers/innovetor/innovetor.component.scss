@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+
+
+section {
+    overflow-x: hidden;
+}
+
+.theme-text {
+    color: #5F3A96 !important
+}
+
+.banner-home h1 {
+    font-family: 'Century Gothic';
+    color: #5F3A96;
+    font-size: 55px;
+    line-height: 57px;
+}
+
+.title {
+    font-family: 'Century Gothic';
+    color: #5F3A96;
+    font-size: 45px;
+}
+
+.divder {
+    width: 62px;
+    height: 1px;
+    background: #5F3A96;
+    margin-right: 15px;
+}
+
+.caree-left:hover {
+    transform: translateY(-10px);
+    box-shadow: 8px 8px 32px 5px rgba(0, 0, 0, 0.2);
+}
+
+.caree-top h2 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    padding-bottom: 10px;
+}
+
+.caree-top p {
+    padding-bottom: 18px;
+    line-height: 24px;
+}
+
+.caree-top {
+    padding: 50px 30px 97px;
+    color: #FFF;
+    max-width: 85%;
+}
+
+.caree-top a {
+    text-decoration: navajowhite;
+}
+
+.caree-box {
+    background: #FFFFFF;
+    box-shadow: 6px 6px 30px 2px rgba(0, 0, 0, 0.08);
+    padding: 40px 0 50px 40px;
+    margin-bottom: 30px;
+    transition: .3s ease-in-out;
+}
+
+.caree-box:hover {
+    box-shadow: 8px 8px 32px 5px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+}
+
+.caree-box-title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    color: #000000;
+    padding-bottom: 15px;
+    padding-top: 0px;
+}
+
+.caree-box a {
+    color: #942C86;
+    text-decoration: none;
+}
+
+.best-regards {
+    padding-top: 10px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    color: #000
+}
+
+#pills-team .members-bord-box-img {
+    width: 200px;
+    border-radius: 100%;
+    height: 200px;
+    overflow: hidden;
+    margin: auto;
+    background: #f1f1f1;
+}
+
+.text-sub-heading {
+    font-size: 24px;
+    color: #942C86
+}
+
+.the-creative p {
+    color: rgba(30, 30, 30, 0.49) !important;
+}
+
+.caree-list {
+    background: #FFFFFF;
+    box-shadow: 6px 6px 30px 2px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    position: relative;
+}
+
+.caree-right-bg {
+    position: relative;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.caree-list li {
+    padding-top: 15px;
+    padding-left: 30px;
+    list-style: none;
+    position: relative;
+}
+
+.caree-list li span {
+    position: absolute;
+    left: -23px;
+    font-size: 20px;
+    line-height: 36px;
+    letter-spacing: 0.05em;
+    color: rgba(30, 30, 30, 0.49);
+}
+
+@media (min-width:1024px) {
+    .caree-right-bg::before {
+        content: "";
+        background: url(../../../assets/images/bg-innovator.png) no-repeat;
+        position: absolute;
+        /* right: 0; */
+        height: 100%;
+        background-position: center 60%;
+        right: -43px;
+        background-size: cover;
+        width: 58%;
+    }
+}
+
+
+@media (max-width:767.98px) {
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+
+}

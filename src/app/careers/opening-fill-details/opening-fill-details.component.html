@@ -1,0 +1,95 @@
+<!-- <p>apply-opening-otp works!</p>
+<button routerLink="/careers/filldetails">details</button> -->
+<section class="apply">
+  <div class="container">
+    <div class="row py-5 align-items-center" style="min-height: 800px;">
+      <div class="col-lg-6">
+        <div class="arrow" (click)="back()"> <span>←</span></div>
+
+        <div class="text pt-4">
+          <p class="apply-p pt-2">You are applying for:</p>
+        </div>
+
+        <div class="next pt-0">
+          <div class="mb-1 input-design">
+
+            <form [formGroup]="fillDetails" (ngSubmit)="submitDetails()">
+
+              <div class="mb-3 position">{{positionDetail1.title}}
+              </div>
+
+
+              <div class="mb-3 mt-4">
+                <input type="text" class="form-control" id="exampleInputtext" aria-describedby="emailHelp"
+                  placeholder="Name" formControlName="name" >
+                  <div >
+
+                    <div *ngIf="isSubmitted && f.name?.errors" >
+                      <div *ngIf="f.name?.errors?.required">
+                        <p style="color: red;font-size: 13px;padding-top: 3px;">Name is required</p>
+                      </div>
+                   </div>
+
+                  </div>
+              </div>
+
+              <div class="mb-3 mt-4">
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                  placeholder="Email" formControlName="email">
+
+                  <div *ngIf="isSubmitted && f.email?.errors" >
+                    <div *ngIf="f.email?.errors?.required">
+                      <p style="color: red;font-size: 13px;padding-top: 3px;">Email is required</p>
+                    </div>
+                    <div *ngIf="f.email?.errors?.email">
+                      <p style="color: red;font-size: 13px;padding-top: 3px;">Email must be a valid email address</p>
+                    </div>
+                 </div>
+
+              </div>
+
+             
+
+              <div class="mb-3 mt-4">
+                <input type="url" class="form-control" id="exampleInputtext" aria-describedby="emailHelp"
+                  placeholder="Paste your linkedin profile link:" formControlName="linkdinLink">
+              </div>
+              <div class="mb-0 mt-4 d-flex">
+                <label style="width: 60%; background: transparent;" for="files" placeholder="" disabled >
+                {{resume}}
+                </label> 
+                <input style="width: 40%; display: none;" type="file" class="form-control"
+                id="files" formControlName="file" (change)="fileChange($event)" >
+                <!-- accept="application/pdf"   accept=".pdf,.doc,.docx"-->
+
+                <label class="align-self-center lebal-fix" style="width: 40%;" for="files"><img class="me-4 mb-1"
+                    src="../../../assets/images/icon.png" alt=""> Choose File</label>
+              </div>
+
+              <div *ngIf="isSubmitted && f.file?.errors" >
+                <div *ngIf="f.file?.errors?.required">
+                  <p style="color: red;font-size: 13px;padding-top: 3px;">Resume is required</p>
+                </div>
+              </div>
+
+              <div class="mb-3 mt-4">
+                <textarea maxlength="140" class="form-control p-0" id="textarea" formControlName="description"
+                  placeholder="Introduce your professional self in less than 140 characters." rows="3"></textarea>
+
+              </div>
+
+              <button type="submit " class="btn btn-primary mt-5" >Submit</button>
+            </form>
+
+
+          </div>
+        </div>
+
+      </div>
+      <div class="col-lg-6 bg-fix">
+        <img src="../../../assets/images/opt.png" alt="">
+      </div>
+
+    </div>
+  </div>
+</section>

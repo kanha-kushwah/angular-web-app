@@ -1,0 +1,71 @@
+<section [style]="{background: questions[i]?.fieldInlineData.bgcolor}" style=" min-height: 100vh;">
+    <header>
+        <section class="header">
+            <div class="container">
+                <div class="row justify-content-center align-items-center py-3">
+                    <div class="col-lg-10 col-6">
+                        <h6 style="font-size: 36px;" (click)="previous()" *ngIf="i!=0"><span style="cursor: pointer;"
+                                [style]="{color: questions[i]?.color1}">←</span></h6>
+                    </div>
+                    <div class="col-lg-2 col-6 text-end">
+                        <h6 style="cursor: default;" [style]="{color: questions[i]?.color1}" routerLink="/">Exit</h6>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+    
+    <section class="career h-100vh" [style]="{background: questions[i]?.fieldInlineData.bgcolor}" [ngClass]="i == 5 ? 'test-img' : ''">
+        <div class="container">
+            <div class="row align-items-center h-100vh">
+                <div class="col-lg-6 ma-fx">
+                    <div class="d-flex align-items-start">
+                        <div class="fix-text" [style]="{color: questions[i]?.fieldInlineData.textcolor}">0{{questions[i]?.fieldId}}</div>
+                        <div class="fix-text1">
+                            <h4 class="single-txt" [style]="{color: questions[i]?.fieldInlineData.textcolor}">{{questions[i]?.fieldName}}</h4>
+                        </div>
+                    </div>
+    
+                    <div class="form-check py-2 mt-3 fix" *ngFor="let ans of questions[i]?.fieldInlineData.options; let idx=index">
+                        <input class="form-check-input" 
+                        type="radio"
+                        [value]="ans.value"
+                        name="flexRadioDefault" 
+                        [id]="ans.key"
+                        (change)="selectedAns(ans.value, questions[i])"
+                        [checked]="idx===0"
+                        >
+                        <label class="form-check-label ps-3" [style]="{color: questions[i]?.fieldInlineData.textcolor}" [for]="ans.key">
+                            {{ans.value}}
+                        </label>
+                    </div>
+    
+    
+                    <div class="nxt"><a style="text-decoration: none; cursor: pointer;"
+                            [style]="{color: questions[i]?.color1}" (click)="next($event, questions[i])"> Next <span class="arrow">→</span> </a>
+                    </div>
+                </div>
+                <div class="col-lg-5  text-end"> <img [src]="questions[i]?.fieldInlineData.image_path" alt="">
+                </div>
+    
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <section class="footer">
+            <div class="container">
+                <div class="row justify-content-center align-items-center py-3">
+                    <div class="col-lg-10">
+                        <h6></h6>
+                    </div>
+                    <div class="col-lg-2 text-end">
+                        <div class="box" [style]="{color: questions[i]?.color1}">
+                            <h6 [style]="{color: questions[i]?.color1}">{{i+1}} out 7</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+    </section>

@@ -1,0 +1,30 @@
+<header>
+  <section class="header" id="myHeader">
+    <div class="container">
+      <div class="row justify-content-center align-items-center py-3">
+        <div class="col-lg-10 col-8">
+          <img src="../../../assets/images/logo.png" alt="">
+        </div>
+        <div class="col-lg-2 col-4 text-end">
+          <button  (click)="openNav()"  type="button" class="btn menu-btn p-0" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <svg width="36" height="35" viewBox="0 0 41 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line y1="1.5" x2="41" y2="1.5" stroke="#5F3A96" stroke-width="3"/>
+              <line y1="14.5" x2="41" y2="14.5" stroke="#5F3A96" stroke-width="3"/>
+              <line y1="28.5" x2="41" y2="28.5" stroke="#5F3A96" stroke-width="3"/>
+            </svg>
+            </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</header>
+
+<div id="mySidenav" class="sidenav">
+<a class="closebtn" style="cursor: pointer;" (click)="closeNav()">&times;</a>
+<a href="#">About</a>
+<a href="#">Services</a>
+<a href="#">Clients</a>
+<a href="#">Contact</a>
+</div>
+
+

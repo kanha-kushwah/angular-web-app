@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    font-family: 'Poppins';
+}
+
+.form-control:focus {
+    background-color: #fff;
+    box-shadow: 0 0 0 0.15rem transparent !important;
+  
+    padding-left: 12px !important;
+    transition: 0.5s;
+    
+    .form-control:visited {
+    background-color: #fff;
+    box-shadow: 0 0 0 0.15rem rgb(95 58 150) !important;
+   
+    padding-left: 12px !important;
+    transition: 0.5s;
+}
+}

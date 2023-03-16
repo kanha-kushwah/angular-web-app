@@ -1,0 +1,55 @@
+<section class="congrates h-100vh" style="background: #F5F7F7; height: 100vh; background-image: url(../../../assets/images/congrates.png); background-repeat: no-repeat;
+    background-position: bottom right;">
+        <div class="container">
+            <div class="row align-items-center cong">
+                <div class="col-lg-7"><h4 class="single-txtc">Congratulations you have successfully<br> completed the eligibility test.
+                </h4>
+                   <p class="cong-p">Please enter your full name and email address below.</p>
+                <div class="form-congrates">
+
+                  <form [formGroup]="userDetail" (ngSubmit)="submitAns()">
+                    <div class="mb-0">
+                        <input 
+                        type="text" 
+                        class="form-control" 
+                        id="name" 
+                        placeholder="Full Name"
+                        formControlName="name">
+                      </div>
+
+                      <div *ngIf="isSubmitted && f.name?.errors" >
+                        <div *ngIf="f.name?.errors?.required">
+                          <p style="color: red;font-size: 13px;padding-top: 3px;">Name is required</p>
+                        </div>
+                      </div>
+
+                    <div class="my-4 mb-0">
+                      <input 
+                      type="email" 
+                      class="form-control" 
+                      id="exampleInputEmail1" 
+                      aria-describedby="emailHelp" 
+                      placeholder="Email address"
+                      formControlName="email">
+                    </div>
+
+                    <div *ngIf="isSubmitted && f.email?.errors" >
+                      <div *ngIf="f.email?.errors?.required">
+                        <p style="color: red;font-size: 13px;padding-top: 3px;">Email is required</p>
+                      </div>
+                    </div>
+                 
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+
+                   <p class="cong-p1"><span style="color: red;">*</span> A six digit key to access the Openings at LE will be mailed to you.</p>
+                  </div>
+
+                </div>
+                <div class="col-lg-5  text-end"> 
+                </div>
+        
+            </div>
+        </div>
+    </section>

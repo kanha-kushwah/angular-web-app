@@ -1,0 +1,43 @@
+<!-- <p>apply-opening-otp works!</p>
+<button routerLink="/careers/filldetails">details</button> -->
+<section class="apply">
+    <div class="container">
+        <div class="row py-5 align-items-center" style="min-height: 800px;">
+            <div class="col-lg-7">
+                <div class="arrow" (click)="back()"> <span>←</span></div>
+                <div class="text">
+                    <h3 class="apply-h3">
+                        Explore remote-friendly flexible opportunity and join our mission in creating some world class
+                        products and services.
+                    </h3>
+                </div>
+
+                <div class="text pt-4">
+                    <h3 class="apply-h3">
+                        {{positionDetail1.title}}
+                    </h3>
+                    <p class="apply-p pt-2">To apply for this position enter the six digit code that you have received
+                        on your email after completing eligibility test</p>
+                </div>
+                <div class="next pt-2">
+                    <div class="mb-3 input-design">
+                        <input type="text" 
+                        class="form-control" 
+                        name="otp" 
+                        id="number"
+                        [(ngModel)]="otp"
+                        (ngModelChange)="getOtp()"
+                        placeholder="Enter six digit code">
+                        <div id="number" class="form-text pt-3">*if you have not taken the eligibility test as of yet,
+                            <b routerLink="/test"><u>take now</u></b></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-5  bg-fix">
+                <img src="../../../assets/images/opt.png" alt="">
+            </div>
+
+        </div>
+    </div>
+</section>

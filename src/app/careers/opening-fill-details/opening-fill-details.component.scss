@@ -1,0 +1,113 @@
+// .apply{
+//     background-image: url(../../../assets/images/opt.png);
+//     background-repeat: no-repeat;
+//     background-position: center right;
+// }
+
+.bg-fix img {
+    position: absolute;
+    transform: translate( 0px ,-200px);
+    right: 0;
+    width: 400px;
+}
+h3.apply-h3 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 48px;
+    letter-spacing: 0.05em;
+    color: #942C86;
+}
+p.apply-p {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+    color: rgba(30, 30, 30, 0.49);
+}
+.input-design input {
+    border: none;
+    border-bottom: solid 0.3px #000;
+    border-radius: 0;
+    width: 98%;
+    padding: 14px 0px;
+    font-size: 15px;
+    line-height: 22px;
+    color: rgba(30, 30, 30,);
+    font-weight: 500;
+}
+
+.input-design input::placeholder {
+    color: rgba(30, 30, 30, 0.49)   !important;
+}
+
+.arrow span {
+    font-size: 36px;
+    cursor: pointer;
+    
+}
+
+.form-text {
+    margin-top: 0.25rem;
+    color: rgba(30, 30, 30, 0.49) !important;
+    font-size: 16px !important;
+}
+.form-text b u {
+    margin-top: 0.25rem;
+    color: #000 !important;
+    font-size: 16px !important;
+    cursor: pointer;
+}
+.position {
+    border: none;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 48px;
+    letter-spacing: 0.05em;
+    color: #942C86;
+}option {
+    font-size: 18px !important;
+    color: #686868;
+}
+textarea {
+    border: none !important;
+    border-bottom: solid 1px #000 !important;
+    border-radius: 0 !important;
+}
+
+button.btn.btn-primary.mt-5 {
+    background: linear-gradient(89.84deg, #F0B239 0.13%, #E74643 52.69%, #723690 99.86%);
+    border-radius: 7.3324px 24.1969px;
+    border: none !important;
+    padding: 16px 80px;
+    font-size: 18px;
+    line-height: 26px;
+}
+.mb-0.mt-4.d-flex {
+    border-bottom: solid 1px;
+    padding-bottom: 10px;
+    width: 98%;
+}
+.d-flex label {
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22px;
+    color: rgba(30, 30, 30, 0.49);
+    padding: 14px 0px;
+}
+textarea::placeholder {
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22px;
+    color: rgba(30, 30, 30, 0.49);
+}
+label.align-self-center.lebal-fix {
+    text-align: end;
+}
