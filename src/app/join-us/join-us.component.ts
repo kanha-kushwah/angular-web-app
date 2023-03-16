@@ -4,32 +4,46 @@ import { Router } from '@angular/router';
 import { AjaxService, API } from '../common/levitating.ajaxsevice';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-join-us',
+  templateUrl: './join-us.component.html',
+  styleUrls: ['./join-us.component.scss']
 })
-export class HomeComponent implements OnInit {
- contactDetails!:FormGroup;
- isSubmitted = false;
- api = new API();
+export class JoinUsComponent implements OnInit {
+  contactDetails!:FormGroup;
+  isSubmitted = false;
+  api = new API();
+  joinValue:any="Join Us";
+  title:any;
 
   constructor(public fb:FormBuilder, public ajaxservice:AjaxService, public router:Router) { }
 
-  ngOnInit(): void {
-    localStorage.setItem('join','0'); 
+  ngOnInit(): void { 
+    let value = localStorage.getItem('join');
+    this.joinValue = value;
+
+    if(this.joinValue == '1')
+    {
+     this.title = "JOIN ME ON MY JOURNEY";
+    }
+    else{
+      this.title = "Join Us";
+    }
+
     this.contactDetails = this.fb.group({
       name: ['',[Validators.required]],
       email:['',[Validators.required,Validators.pattern('[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}')]],
       position : ['',[Validators.required]],
       description:['']
     })
-
   }
 
   get f(){
     return this.contactDetails.controls;
   }
 
+  ngOnDistroy(){
+    localStorage.removeItem('join');
+  }
 
   submitDetails(){
     console.log('form',this.contactDetails)

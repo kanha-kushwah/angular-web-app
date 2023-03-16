@@ -2,6 +2,7 @@ import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AjaxService, API } from 'src/app/common/levitating.ajaxsevice';
 
 @Component({
   selector: 'app-opening-fill-details',
@@ -14,7 +15,9 @@ export class OpeningFillDetailsComponent implements OnInit {
   resume : any = 'Upload Resume (only PDF):';
   userDetails1:any;
   positionDetail1:any;
-  constructor(public fb:FormBuilder, public location:Location, public router:Router) { }
+  api = new API();
+
+  constructor(public fb:FormBuilder, public location:Location, public router:Router, public ajaxservice:AjaxService) { }
 
   ngOnInit(): void {
     this.userDetails1 = JSON.parse(localStorage.getItem('userDetails') || '{}');
@@ -51,7 +54,10 @@ export class OpeningFillDetailsComponent implements OnInit {
   }
 
   submitDetails(){
-    // routerLink="/congrates"
+
+  const formData = new FormData();
+  formData.append('file',this.filedata);
+
   this.isSubmitted = true;
   
   console.log('valueee',this.fillDetails)
@@ -65,8 +71,7 @@ export class OpeningFillDetailsComponent implements OnInit {
     let fullpath:any = this.fillDetails.value.file;
     let filename:any = fullpath.split('\\').pop().split('/').pop();
     
-
-    //this.router.navigate(['/congrates']);
+    this.router.navigate(['/congrates']);
     let passData = {
       "jobId":this.positionDetail1.id,
       "candidateName":this.userDetails1.candidateName,
@@ -75,9 +80,14 @@ export class OpeningFillDetailsComponent implements OnInit {
       "linkedinProfile": this.fillDetails.value.linkdinLink,
       "resume":this.resume,
       "professionalSummary":this.fillDetails.value.description      
-      }
+    }
 
-      console.log('ppppppp',passData)
+    this.ajaxservice.postDataFile(this.api.jobApplication,passData,formData)
+    .subscribe((data:any)=>{
+
+    })
+
+    console.log('ppppppp',passData)
   }
   
   }

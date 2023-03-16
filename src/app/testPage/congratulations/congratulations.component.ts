@@ -63,10 +63,10 @@ export class CongratulationsComponent implements OnInit {
 
   console.log('valueee',data)
 
- /*  this.ajaxservice.postData(this.api.submit_ans,data)
+  this.ajaxservice.postData(this.api.submit_ans,data)
   .subscribe((data:any)=>{
 
-  }) */
+  })
     
   }
 

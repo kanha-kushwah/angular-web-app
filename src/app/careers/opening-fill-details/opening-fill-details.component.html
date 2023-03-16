@@ -13,7 +13,7 @@
         <div class="next pt-0">
           <div class="mb-1 input-design">
 
-            <form [formGroup]="fillDetails" (ngSubmit)="submitDetails()">
+            <form [formGroup]="fillDetails" (ngSubmit)="submitDetails()" enctype="multipart/form-data">
 
               <div class="mb-3 position">{{positionDetail1.title}}
               </div>
@@ -59,7 +59,7 @@
                 {{resume}}
                 </label> 
                 <input style="width: 40%; display: none;" type="file" class="form-control"
-                id="files" formControlName="file" (change)="fileChange($event)" >
+                id="files" formControlName="file" (change)="fileChange($event)" accept=".pdf,txt">
                 <!-- accept="application/pdf"   accept=".pdf,.doc,.docx"-->
 
                 <label class="align-self-center lebal-fix" style="width: 40%;" for="files"><img class="me-4 mb-1"

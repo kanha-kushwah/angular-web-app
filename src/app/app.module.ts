@@ -15,6 +15,7 @@ import { LoaderService } from './common/loader.service';
 import { InterceptorService } from './common/levitating.interceptor';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { JoinUsComponent } from './join-us/join-us.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { AboutComponent } from './about/about.component';
     CongratesApplyComponent,
     HomeComponent,
     AboutComponent,
+    JoinUsComponent,
   ],
   imports: [
     BrowserModule,
