@@ -43,6 +43,138 @@ div#mySidenav.mystyle {
   font-size: 36px;
   margin-left: 50px;
 }
+
+
+
+section{overflow-x: hidden;}
+body.modal-open {
+	padding-right: 0 !important;
+}
+.theme-text{color: #5F3A96 !important}
+.modal.menu-right .modal-dialog {
+	margin: auto;
+	margin-right: 0;
+}
+.modal.menu-right .modal-dialog {
+	width: 35%;
+	max-width: 35rem;
+}
+.modal.menu-right .modal-content {
+	border: 0;
+	border-radius: 0;
+	outline: 0;
+	min-height:100vh;
+}
+.modal.menu-right .modal-content {
+	background-color: #5F3A96;
+	padding-left:40px;
+	padding-right:40px;
+}
+.copy-right a {
+	text-decoration: none;
+	font-size: 14px;
+	line-height: 24px;
+}
+
+.copy-right a:hover{color:#FCB513 !important;}
+.footer-btn .nav-link-btn-2:hover {
+	background: 0 0;
+	color: #fff;
+	border: 1px solid #fff;
+	transition: .3s ease-in-out;
+}
+.btn-close:focus {
+	outline: 0;
+	box-shadow: none !important;
+	opacity: 1;
+}
+.copy-right {
+	font-size: 14px;
+		line-height: 24px;
+}
+.modal.menu-right .btn-close {
+	opacity: .8;
+	background-image: none;
+}
+/*Right*/
+.modal.menu-right.fade .modal-dialog {
+	right: -320px;
+	-webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+	-moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+	-o-transition: opacity 0.3s linear, right 0.3s ease-out;
+	transition: opacity 0.3s linear, right 0.3s ease-out;
+}
+.modal.menu-right.fade.show .modal-dialog {
+	right: 0;
+}
+
+.menu-right-nav {
+	padding: 0 15px;
+	text-decoration: none !important;
+	padding-left: 6px;
+}
+.menu-right-nav li{list-style: none;}
+.menu-right-nav a {
+	text-decoration: none;
+	color: #FFF;
+	transition: 0.5s;
+	margin: 5px 0;
+	padding: 12px 0;
+	display: inline-block;
+	text-transform: uppercase;
+}
+.modal-title {
+font-family: 'Century Gothic';
+color: #5F3A96;
+font-size:25px;
+line-height:30px;
+}
+.menu-right-nav a:hover {
+	color: #FCB513;
+	padding-left: 3px;
+}
+
+
+
+.footer-btn .nav-link-btn-1 {
+	color: #fff;
+	border: 1px solid #fff !important;
+}
+
+.footer-btn .nav-link-btn-1:hover, .footer-btn .nav-link-btn-2 {
+  background-color: #d9d9d9;
+  border: 1px solid #d9d9d9;
+  color: #000;
+  transition: .3s ease-in-out;
+}
+.footer-btn .nav-link-btn-1, .footer-btn .nav-link-btn-2 {
+  font-size: .9rem;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+@media (max-width:767.98px) {
+ 	.container {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.modal.menu-right .modal-dialog {
+	width: 88%;
+}
+
+}
+
+
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
