@@ -71,7 +71,7 @@ export class OpeningFillDetailsComponent implements OnInit {
     let fullpath:any = this.fillDetails.value.file;
     let filename:any = fullpath.split('\\').pop().split('/').pop();
     
-    this.router.navigate(['/congrates']);
+    // this.router.navigate(['/congrates']);
     let passData = {
       "jobId":this.positionDetail1.id,
       "candidateName":this.userDetails1.candidateName,
@@ -84,7 +84,7 @@ export class OpeningFillDetailsComponent implements OnInit {
 
     this.ajaxservice.postDataFile(this.api.jobApplication,passData,formData)
     .subscribe((data:any)=>{
-
+      this.router.navigate(['/congrates']);
     })
 
     console.log('ppppppp',passData)

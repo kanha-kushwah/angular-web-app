@@ -47,7 +47,7 @@ export class CongratulationsComponent implements OnInit {
     this.isSubmitted = true;
   }else{
     this.isSubmitted = false;
-    this.router.navigate(['/openings']);
+    // this.router.navigate(['/openings']);
   let data = {
     form_id: "",
     form_name: "",
@@ -65,7 +65,7 @@ export class CongratulationsComponent implements OnInit {
 
   this.ajaxservice.postData(this.api.submit_ans,data)
   .subscribe((data:any)=>{
-
+    this.router.navigate(['/openings']);
   })
     
   }

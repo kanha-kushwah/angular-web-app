@@ -17,10 +17,10 @@ export class OpeningsComponent implements OnInit {
   }
 
   getOpeningDetails(){
-    this.positionData = this.levitatingservice.allJobList;
+    //this.positionData = this.levitatingservice.allJobList;
     this.ajaxservice.getData(this.api.AllJobList)
     .subscribe((data:any)=>{
-
+      this.positionData = data;
     })
   }
 
