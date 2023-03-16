@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
  contactDetails!:FormGroup;
  isSubmitted = false;
  api = new API();
+ captcha = false;
 
   constructor(public fb:FormBuilder, public ajaxservice:AjaxService, public router:Router) { }
 
@@ -30,6 +31,11 @@ export class HomeComponent implements OnInit {
     return this.contactDetails.controls;
   }
 
+  checkValue(event:any){
+    console.log('check value',event.target.checked)
+    this.captcha = event.target.checked;
+  }
+
 
   submitDetails(){
     console.log('form',this.contactDetails)
@@ -40,6 +46,7 @@ export class HomeComponent implements OnInit {
     }else{
       this.isSubmitted = false;
 
+      if(this.captcha){
       let contactData = {
         candidateName:this.contactDetails.value.name,
         candidateEmail:this.contactDetails.value.email,
@@ -47,11 +54,14 @@ export class HomeComponent implements OnInit {
         candidateDesrciption:this.contactDetails.value.description
       }
 
+      this.router.navigate(['/']);
+      
       this.ajaxservice.postData(this.api.contactDetails,contactData)
       .subscribe((data:any)=>{
         this.contactDetails.reset();
+        
       })
-
+     }
     }
   }
 

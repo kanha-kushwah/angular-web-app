@@ -8,6 +8,23 @@ body {
 	font-size: 16px;
 	overflow-x:hidden;
 }
+.form-check input#flexCheckDefault {
+    margin-left: 6px;
+    margin-right: 14px;
+}
+label.form-check-label{
+	color: rgba(30, 30, 30, 0.49);
+
+}
+img.fix-chek {
+    margin-left: 12px;
+}
+.form-check {
+    border: solid 1px;
+    padding: 12px;
+    width: 240px;
+}
+
 section{overflow-x: hidden;}
 body.modal-open {
 	padding-right: 0 !important;

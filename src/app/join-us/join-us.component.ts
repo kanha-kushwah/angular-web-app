@@ -14,6 +14,7 @@ export class JoinUsComponent implements OnInit {
   api = new API();
   joinValue:any="Join Us";
   title:any;
+  captcha = false;
 
   constructor(public fb:FormBuilder, public ajaxservice:AjaxService, public router:Router) { }
 
@@ -31,7 +32,7 @@ export class JoinUsComponent implements OnInit {
 
     this.contactDetails = this.fb.group({
       name: ['',[Validators.required]],
-      email:['',[Validators.required,Validators.pattern('[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}')]],
+      email:['',[Validators.required,Validators.pattern('^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})|(^[0-9]{10})+$')]],
       position : ['',[Validators.required]],
       description:['']
     })
@@ -39,6 +40,11 @@ export class JoinUsComponent implements OnInit {
 
   get f(){
     return this.contactDetails.controls;
+  }
+
+  checkValue(event:any){
+    console.log('check value',event.target.checked)
+    this.captcha = event.target.checked;
   }
 
   ngOnDistroy(){
@@ -53,19 +59,20 @@ export class JoinUsComponent implements OnInit {
       this.isSubmitted = true;
     }else{
       this.isSubmitted = false;
-
+      if(this.captcha){
       let contactData = {
         candidateName:this.contactDetails.value.name,
         candidateEmail:this.contactDetails.value.email,
         logState: "1",
         candidateDesrciption:this.contactDetails.value.description
       }
-
+      this.router.navigate(['/']);
       this.ajaxservice.postData(this.api.contactDetails,contactData)
       .subscribe((data:any)=>{
+       
         this.contactDetails.reset();
       })
-
+    }
     }
   }
 

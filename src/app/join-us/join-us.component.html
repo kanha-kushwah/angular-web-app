@@ -69,7 +69,16 @@
                 formControlName="description"></textarea>
               <div class="text-end pt-1"><small> Min 100 characters</small></div>
             </div>
-            <div class="pt-3"> <img src="../../assets/images/robot.png"> </div>
+            <div class="pt-3"> 
+              <!-- <img src="../../assets/images/robot.png">  -->
+              <div class="pt-3">  <div class="form-check" for="flexCheckDefault">
+                <input class="form-check-input" type="checkbox" value=""  id="flexCheckDefault" (click)="checkValue($event)">
+                <label class="form-check-label" for="flexCheckDefault">
+                  i am not robot <img class="fix-chek" src="../../assets/images/checkbox.svg" alt="">
+                </label>
+              </div>
+            </div>
+            </div>
 
             <div class="pt-5">
               <button class="btn btn-primary">Submit</button>
