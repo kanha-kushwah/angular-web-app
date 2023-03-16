@@ -13,11 +13,15 @@ import { CongratesApplyComponent } from './congrates-apply/congrates-apply.compo
 import { AjaxService } from './common/levitating.ajaxsevice';
 import { LoaderService } from './common/loader.service';
 import { InterceptorService } from './common/levitating.interceptor';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CongratesApplyComponent,
+    HomeComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

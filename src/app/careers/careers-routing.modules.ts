@@ -13,7 +13,7 @@ import { OpeningsComponent } from './openings/openings.component';
 
 const routes: Routes = [
   {
-    path:'', redirectTo:'/innovetor', pathMatch:'full'
+    path:'career', redirectTo:'/innovetor', pathMatch:'full'
   },
   {
       path: '', component: CareersComponent,
