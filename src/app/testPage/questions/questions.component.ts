@@ -20,7 +20,6 @@ export class QuestionsComponent implements OnInit {
   ngOnInit(): void {
     this.levitservice.answerList = [];
     this.getQues();
-
   }
 
 

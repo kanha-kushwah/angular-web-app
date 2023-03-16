@@ -25,22 +25,23 @@ export class ApplyOpeningOtpComponent implements OnInit {
   console.log('otp length',this.otp.length)
   if(this.otp.length == 6)
   {
-  this.router.navigate(['/filldetails']);
+  // this.router.navigate(['/filldetails']);
   let passcode = this.otp;
   
   this.ajaxservice.postData(this.api.OtpVerification,passcode)
-  .subscribe((data)=>{
-   if(data.status == 200)
+  .subscribe((data1)=>{
+   if(data1.status == 200)
    {
+    let data = data1;
 
-   let data = {
+   /* let data = {
     "candidateId": 152,
     "candidateName": "abc",
     "candidateEmail": "xyz@ab",
     "candidateCode": "333569",
     "logDatetime": "2023-03-14T09:57:58.796+00:00",
     "logState": 1
-   }
+   } */
    
    localStorage.setItem('userDetails',JSON.stringify(data));
 

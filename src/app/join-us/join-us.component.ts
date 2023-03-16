@@ -66,10 +66,10 @@ export class JoinUsComponent implements OnInit {
         logState: "1",
         candidateDesrciption:this.contactDetails.value.description
       }
-      this.router.navigate(['/']);
+      // this.router.navigate(['/']);
       this.ajaxservice.postData(this.api.contactDetails,contactData)
       .subscribe((data:any)=>{
-       
+        this.router.navigate(['/']);
         this.contactDetails.reset();
       })
     }
