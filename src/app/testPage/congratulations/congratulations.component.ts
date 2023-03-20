@@ -49,12 +49,12 @@ export class CongratulationsComponent implements OnInit {
     this.isSubmitted = false;
     // this.router.navigate(['/openings']);
   let data = {
-    form_id: "",
-    form_name: "",
+    form_id: "1",
+    form_name: "sample",
     candidate_name: this.userDetail.value.name,
     candidate_email: this.userDetail.value.email,
     candidate_ID : "",
-    account_Id : "",
+    account_Id : "1",
     latitude: this.latitude,
     longitude: this.longitude,
     gps_accuracy: "",

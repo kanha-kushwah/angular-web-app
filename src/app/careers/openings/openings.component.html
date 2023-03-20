@@ -15,10 +15,10 @@
             <div class="accordion-body">
 
                 <div class="row align-items-center acco-body">
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 col-12">
                         <h4 class="fix-head-h4">{{job.jobTitle}}</h4>
                     </div>
-                    <div class="col-lg-6 d-flex justify-content-end align-items-center">
+                    <div class="col-lg-6 col-12 d-flex justify-content-end align-items-center">
                         <div class="btn"><button class="apply me-4" routerLink="/apply" (click)="appliJob(job.jobId,job.jobTitle)">Apply</button> </div>
                         <div class="share"><span class="share-img me-3"><img src="../../../assets/images/share.png" alt=""></span>
                             Share</div>
@@ -26,13 +26,13 @@
                 </div>
 
                 <div class="row align-items-center acco-body mt-4">
-                    <div class="col-lg-12 h6-title">
-                        <h6><b>Requirement:</b> {{job.jobRequirement}}<br>
-                            <b> Position:</b> {{job.jobTitle}}<br>
-                            <b> Experience:</b> {{job.requiredExperience}}<br>
-                            <b> Location:</b> {{job.jobLocation}}<br>
-                            <b> CTC:</b> {{job.costTocompany}}
-                        </h6><br>
+                    <div class="col-lg-12 h6-title align-self-center">
+                        <h6><p><b>Requirement:</b> {{job.jobRequirement}}<br></p>
+                            <p> <b> Position:</b> {{job.jobTitle}}<br></p>
+                            <p> <b> Experience:</b> {{job.requiredExperience}}<br></p>
+                            <p>  <b> Location:</b> {{job.jobLocation}}<br></p>
+                            <p>  <b> CTC:</b> {{job.costTocompany}}</p>
+                        </h6>
                     </div>
 
                 </div>
@@ -40,23 +40,14 @@
 
                 <div class="row align-items-center mt-4">
                     <div class="col-lg-12 h6-title">
-                        <h6><b>Responsibilities of {{job.jobTitle}}</b><br>
-                            <ul class="pt-3">
+                        <h6><b>Responsibilities of {{job.jobTitle}}</b>
+                            <ul class="pt-3 col-pt-0">
                                 <li>
                                    {{job.jobDescription}} 
                                 </li>
-                                <!-- <li> Optimize existing user interface designs</li>
-                                <li> Test for intuitivity and experience</li>
-                                <li> Communicate with Business/Team Heads to understand their business goals and
-                                    objectives</li>
-                                <li> Develop technical and business requirements and deliver intuitive and user-centered
-                                    solutions</li>
-                                <li> Combine creativity with an awareness of the design elements</li>
-                                <li> Create prototypes for new product ideas</li>
-                                <li> Test new ideas before implementing </li>
-                                <li> Conduct an ongoing user research</li> -->
+            
                             </ul>
-                        </h6><br>
+                        </h6>
                     </div>
                 </div>
 
@@ -65,31 +56,11 @@
                     <div class="col-lg-12 h6-title">
                         <h6><b> Skills and Qualifications</b><br>
                             <ul class="pt-3">
-
-
                                 <li> 
                                 {{job.skillsQualifications}}
                                 </li>
-                                <!-- <li> A minimum of 3 years plus of experience as a UI/UX designer</li>
-                                <li> A minimum of 2 years plus experience in a Creative Design Studio or Advertising
-                                    Agency</li>
-                                <li> A minimum of 1 year plus of experience with HTML5 & CSS3 (not mandatory, but added
-                                    advantage)</li>
-                                <li> A must and excellent working knowledge of:</li>
-                                <li> Figma or Adobe XD</li>
-                                <li> Photoshop</li>
-                                <li> Illustrator (basics)</li>
-                                <li> PowerPoint / Slides / Keynote</li>
-                                <li> Excellent  interpersonal and communication skills</li>
-                                <li>Should be a:</li>
-                                <li> Critical Thinker</li>
-                                <li> Problem Solver</li>
-                                <li> Detailed Oriented</li> -->
-
                             </ul>
-
-
-                        </h6><br>
+                        </h6>
                     </div>
 
                 </div>

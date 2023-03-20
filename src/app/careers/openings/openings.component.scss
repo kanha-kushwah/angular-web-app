@@ -2,6 +2,9 @@
 
 /* CAREER  start */
 
+p{
+    margin: 0;
+}
 section.Eligibility {
     min-height: 550px;
     align-items: center;
@@ -174,4 +177,112 @@ button.apply.me-4 {
     color: rgba(30, 30, 30, 0.49);
     padding: 40px 0px;
 }
+
+
 /* CAREER  end */
+@media(max-width:1400px){
+    .share{
+        width: 28%;
+
+    }
+}
+@media(max-width:1400px){
+    .share{
+        width: 54%;
+
+    }
+}
+
+
+
+
+@media(max-width:768px){
+    .row.align-items-center.mt-4, .row.align-items-center.mt-2{
+        padding: 0px 0px;
+    }
+    button.accordion-button.collapsed {
+        padding: 4px 0px;
+        font-size: 14px !important;
+    }
+    .row.align-items-center.acco-body{
+        padding: 10px 0px;
+        background: #F5F7F7;
+    }
+    .accordion-button:after {
+        content: "" !important;
+        width: 34px !important;
+        padding: 13px 0px;
+        background-size: 24px;  
+        
+    }
+    .accordion-button:not(.collapsed):after {
+        content: "" !important;
+        width: 34px !important;
+        padding: 13px 0px;
+        background-size: 24px; 
+    }
+    .btn {
+        width: 100%;
+        text-align: left;
+        padding: 10px 0px 10px 0px;
+    }
+    .share{
+        width: 100%;
+        text-align: end;
+        font-size: 16px;
+    }
+    button.apply.me-4 {
+        padding: 10px 50px;
+        font-size: 14px;
+        line-height: 26px;
+    }
+    
+
+.p p {
+    padding: 12px 0px;
+}
+.h6-title p {
+    font-size: 14px !important;
+    line-height: 16px;
+    padding-bottom: 24px;
+}
+.h6-title h6 b {
+
+    font-size: 16px;
+    line-height: 20px;
+
+}
+ul.pt-3 {
+    font-size: 14px;
+}
+.h6-title h6 {
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+
+}
+
+.col-lg-12.h6-title.align-self-center {
+    padding-top: 20px;
+}
+.accordion-body {
+    margin-top: 15px !important;
+    border: none;
+    width: 100%;
+    margin: auto;
+    padding: 10px 12px;
+}
+ul.pt-3 {
+    padding-top: 10px !important;
+    
+}
+h4.fix-head-h4 {
+   font-size: 20px;
+   
+}
+button.accordion-button {
+    padding: 10px 0px;
+    font-size: 0px !important;
+}
+}

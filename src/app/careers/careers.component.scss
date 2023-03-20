@@ -46,9 +46,10 @@ img.img-butter {
 
 @media(max-width:768px){
   .row.align-items-center.height{
-    height: 250px !important;
+    min-height: 250px !important;
     text-align: center;
 }
+
 
 section.career1.h-100vh {
   background-size: contain !important;
@@ -65,13 +66,13 @@ color: #F5F7F7;
   width: 100px;
   position: absolute;
   right: 0;
-  top: 16%;
+  top: 125px;
 }
 .text-left img {
 width: 100px;
 position: absolute;
 left: 0;
-top: 16%;
+top: 125px;
 }
 
 }
