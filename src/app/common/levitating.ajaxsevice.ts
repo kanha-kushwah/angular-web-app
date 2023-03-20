@@ -39,10 +39,8 @@ export class AjaxService {
 
 
 
-export class API {    
-    //getQues = "https://orko-dev-api.azurewebsites.net/api/v1/smart_forms/form1/1";
-    
-    baseUrl = "http://8020-2406-b400-a9-53b4-ec18-51bc-a06d-6af3.ngrok.io/api/";
+export class API {
+    baseUrl = "http://ec2-13-233-184-38.ap-south-1.compute.amazonaws.com:8080/api/";
 
     getQues = this.baseUrl+"getQuestions?formID=1";
     submit_ans = this.baseUrl + "submit-answers";
