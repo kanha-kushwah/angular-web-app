@@ -4,6 +4,7 @@ import { AboutComponent } from './about/about.component';
 import { CareersComponent } from './careers/careers.component';
 import { HomeComponent } from './home/home.component';
 import { JoinUsComponent } from './join-us/join-us.component';
+import { ThankyouComponent } from './thankyou/thankyou.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path:'joinus',
     component: JoinUsComponent
+  },
+  {
+    path:'thankyou',
+    component: ThankyouComponent
   },
 ];
 

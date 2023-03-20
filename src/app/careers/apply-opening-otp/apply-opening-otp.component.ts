@@ -35,7 +35,7 @@ export class ApplyOpeningOtpComponent implements OnInit {
    if(data1.status == 200)
    {
     let data = data1;
-
+    this.otp = '';
    /* let data = {
     "candidateId": 152,
     "candidateName": "abc",
@@ -51,9 +51,11 @@ export class ApplyOpeningOtpComponent implements OnInit {
    this.router.navigate(['/filldetails']);
    }
    else{
+   this.otp = '';
    this.isOtpValid = true;
    }
   })
+  this.otp = '';
   }
 
   }

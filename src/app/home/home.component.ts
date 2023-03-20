@@ -59,7 +59,7 @@ export class HomeComponent implements OnInit {
       this.ajaxservice.postData(this.api.contactDetails,contactData)
       .subscribe((data:any)=>{
         this.contactDetails.reset();
-        this.router.navigate(['/']);
+        this.router.navigate(['/thankyou']);
       })
      }
     }

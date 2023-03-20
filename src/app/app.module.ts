@@ -16,6 +16,8 @@ import { InterceptorService } from './common/levitating.interceptor';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { JoinUsComponent } from './join-us/join-us.component';
+import { ThankyouComponent } from './thankyou/thankyou.component';
+import { AutosizeModule } from 'ngx-autosize';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { JoinUsComponent } from './join-us/join-us.component';
     HomeComponent,
     AboutComponent,
     JoinUsComponent,
+    ThankyouComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +36,7 @@ import { JoinUsComponent } from './join-us/join-us.component';
     SharedModule,
     CareersRoutingModule,
     HttpClientModule,
+    AutosizeModule
   ],
   providers: [
     ApiService,

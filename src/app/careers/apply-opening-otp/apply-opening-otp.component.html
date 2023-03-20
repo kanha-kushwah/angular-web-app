@@ -28,6 +28,9 @@
                         [(ngModel)]="otp"
                         (ngModelChange)="getOtp()"
                         placeholder="Enter six digit code">
+
+                        <p style="color:red;font-size: 13px;" *ngIf="isOtpValid">Please Enter Valid OTP</p>
+                        
                         <div id="number" class="form-text pt-3">*if you have not taken the eligibility test as of yet,
                             <b routerLink="/test"><u>take now</u></b></div>
                     </div>

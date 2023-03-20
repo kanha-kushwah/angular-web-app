@@ -69,7 +69,7 @@ export class JoinUsComponent implements OnInit {
       // this.router.navigate(['/']);
       this.ajaxservice.postData(this.api.contactDetails,contactData)
       .subscribe((data:any)=>{
-        this.router.navigate(['/']);
+        this.router.navigate(['/thankyou']);
         this.contactDetails.reset();
       })
     }

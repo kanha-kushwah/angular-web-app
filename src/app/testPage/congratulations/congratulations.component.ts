@@ -50,11 +50,12 @@ export class CongratulationsComponent implements OnInit {
     // this.router.navigate(['/openings']);
   let data = {
     form_id: "1",
-    form_name: "sample",
+    account_Id : "1",
+    logState:"1",
+    form_name: "Career Questions",
     candidate_name: this.userDetail.value.name,
     candidate_email: this.userDetail.value.email,
     candidate_ID : "",
-    account_Id : "1",
     latitude: this.latitude,
     longitude: this.longitude,
     gps_accuracy: "",

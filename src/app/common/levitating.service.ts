@@ -410,42 +410,49 @@ export class LevitatingService {
       "field_id": "",
       "field_value": "",
       "combo_id": "",
+      "sequence_id":"",
       "data_type_id": ""
     },
     field_id2: {
       "field_id": "",
       "field_value": "",
       "combo_id": "",
+      "sequence_id":"",
       "data_type_id": ""
     },
     field_id3: {
       "field_id": "",
       "field_value": "",
       "combo_id": "",
+      "sequence_id":"",
       "data_type_id": ""
     },
     field_id4: {
       "field_id": "",
       "field_value": "",
       "combo_id": "",
+      "sequence_id":"",
       "data_type_id": ""
     },
     field_id5: {
       "field_id": "",
       "field_value": "",
       "combo_id": "",
+      "sequence_id":"",
       "data_type_id": ""
     },
     field_id6: {
       "field_id": "",
       "field_value": "",
       "combo_id": "",
+      "sequence_id":"",
       "data_type_id": ""
     },
     field_id7: {
       "field_id": "",
       "field_value": "",
       "combo_id": "",
+      "sequence_id":"",
       "data_type_id": ""
     }
   }

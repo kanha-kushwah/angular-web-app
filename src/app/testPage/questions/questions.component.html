@@ -32,7 +32,7 @@
                         [value]="ans.value"
                         name="flexRadioDefault" 
                         [id]="ans.key"
-                        (change)="selectedAns(ans.value, questions[i])"
+                        (change)="selectedAns(ans.value, questions[i],ans.key)"
                         [checked]="idx===0"
                         >
                         <label class="form-check-label ps-3" [style]="{color: questions[i]?.fieldInlineData.textcolor}" [for]="ans.key">
