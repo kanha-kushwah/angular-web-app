@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row justify-content-center align-items-center py-3">
         <div class="col-lg-10 col-8">
-          <img src="../../../assets/images/logo.png" alt="">
+          <img src="../../../assets/images/logo.png" routerLink="/home">
         </div>
         <div class="col-lg-2 col-4 text-end">
           <button  (click)="openNav()"  type="button" class="btn menu-btn p-0" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -28,11 +28,11 @@
       </div>
       <div class="modal-body">
         <ul class="menu-right-nav">
-          <li class="menu-right-nav-item"> <a>Home</a> </li>
-          <li class="menu-right-nav-item"> <a>About</a> </li>
+          <li class="menu-right-nav-item" data-bs-dismiss="modal" aria-label="Close" routerLink="/"> <a>Home</a> </li>
+          <li class="menu-right-nav-item" data-bs-dismiss="modal" aria-label="Close" routerLink="/about"> <a>About</a> </li>
           <li class="menu-right-nav-item"> <a>OUR PRODUCTS</a></li>
-          <li class="menu-right-nav-item"> <a>CAREER</a></li>
-          <li class="menu-right-nav-item"> <a>Contact Us</a></li>
+          <li class="menu-right-nav-item" data-bs-dismiss="modal" aria-label="Close" routerLink="/innovetor" > <a>CAREER</a></li>
+          <li class="menu-right-nav-item"  data-bs-dismiss="modal" aria-label="Close" routerLink="/joinus" > <a>Contact Us</a></li>
         </ul>
 
         <div class="menu-footer right-boxed">
