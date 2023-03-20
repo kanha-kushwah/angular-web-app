@@ -26,9 +26,11 @@ export class ApplyOpeningOtpComponent implements OnInit {
   if(this.otp.length == 6)
   {
   // this.router.navigate(['/filldetails']);
-  let passcode = this.otp;
+  //let passcode = this.otp;
+  const formData = new FormData();
+  formData.append('passcode',this.otp);
   
-  this.ajaxservice.postData(this.api.OtpVerification,passcode)
+  this.ajaxservice.postData(this.api.OtpVerification,formData)
   .subscribe((data1)=>{
    if(data1.status == 200)
    {
