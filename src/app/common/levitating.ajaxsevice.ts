@@ -39,11 +39,10 @@ export class AjaxService {
 
 
 
-export class API {
-    // https://fa2e-2406-b400-a9-850e-583-2393-80b0-aa46.ngrok.io/api/getQuestions?formID=1
+export class API {    
     //getQues = "https://orko-dev-api.azurewebsites.net/api/v1/smart_forms/form1/1";
     
-    baseUrl = "https://fa2e-2406-b400-a9-850e-583-2393-80b0-aa46.ngrok.io/api/";
+    baseUrl = "http://8020-2406-b400-a9-53b4-ec18-51bc-a06d-6af3.ngrok.io/api/";
 
     getQues = this.baseUrl+"getQuestions?formID=1";
     submit_ans = this.baseUrl + "submit-answers";
