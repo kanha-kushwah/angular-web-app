@@ -103,4 +103,40 @@ p.cong-p1 {
 .fix .form-check-input:checked[type=radio] {
     filter: brightness(0) !important;
 }
+
+@media (max-width:768px){
+    .form-congrates input {
+        width: 100%;
+    }
+    section.congrates.h-100vh {
+        background: none !important;
+    }
+    .btn-primary {
+        padding: 8px 70px;
+        font-size: 16px;
+        line-height: 36px;
+
+    }
+    h4.single-txtc br {
+        display: none;
+    }
+    .congrates{
+        padding: 20px 0px;
+    }
+    
+
+p.cong-p{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+h4.single-txtc {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 36px;
+    letter-spacing: 0.05em;
+    color: #942C86;
+}
+}
 /* congrates  end */
