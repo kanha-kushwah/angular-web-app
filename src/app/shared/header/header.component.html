@@ -3,8 +3,12 @@
     <div class="container">
       <div class="row justify-content-center align-items-center py-3">
         <div class="col-lg-10 col-8">
-          <img src="../../../assets/images/logo.png" routerLink="/home">
-        </div>
+          <!-- *ngIf=" loaderservice.currentUrl == '/home' && white && !blue" -->
+          <!-- *ngIf=" loaderservice.currentUrl == '/home' && !white && blue" -->
+          <img  routerLink="/" class="logo-after"  src="../../../assets/images/logo.png" alt="" width="210" *ngIf=" (loaderservice.currentUrl == '/home' || loaderservice.currentUrl == '/') && white && !blue">
+          <img  routerLink="/" class="logofix" src="../../../assets/images/logo-color.png" alt=""  width="210" *ngIf=" (loaderservice.currentUrl == '/home' || loaderservice.currentUrl == '/') && !white && blue">
+          <img  routerLink="/" class="logofix" src="../../../assets/images/logo-color.png" alt=""  width="210" *ngIf=" (loaderservice.currentUrl != '/home' && loaderservice.currentUrl != '/')">
+      </div>
         <div class="col-lg-2 col-4 text-end">
           <button  (click)="openNav()"  type="button" class="btn menu-btn p-0" data-bs-toggle="modal" data-bs-target="#exampleModal">
             <svg width="36" height="35" viewBox="0 0 41 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -20,7 +24,7 @@
 </header>
 
 
-<div class="modal fade menu-right" id="exampleModal"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade menu-right" id="exampleModal" backdrop="false"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header border-0 justify-content-start">
@@ -29,17 +33,14 @@
       <div class="modal-body">
         <ul class="menu-right-nav">
           <li class="menu-right-nav-item" data-bs-dismiss="modal" aria-label="Close" routerLink="/"> <a>Home</a> </li>
-          <li class="menu-right-nav-item" data-bs-dismiss="modal" aria-label="Close" routerLink="/about"> <a>About</a> </li>
+          <li class="menu-right-nav-item" data-bs-dismiss="modal" aria-label="Close" routerLink="/about/whyle"> <a>About</a> </li>
           <li class="menu-right-nav-item"> <a>OUR PRODUCTS</a></li>
           <li class="menu-right-nav-item" data-bs-dismiss="modal" aria-label="Close" routerLink="/innovetor" > <a>CAREER</a></li>
           <li class="menu-right-nav-item"  data-bs-dismiss="modal" aria-label="Close" routerLink="/joinus" > <a>Contact Us</a></li>
         </ul>
 
         <div class="menu-footer right-boxed">
-  <div class="row" >
-    <div class="col-6 text-end footer-btn"> <a class="nav-link nav-link-btn-1 " href="#">LOGIN</a> </div>
-    <div class="col-6 px-0 footer-btn"> <a class="nav-link nav-link-btn-2" href="#">Try for free</a> </div>
-    <div class="col-12 footer-btn pe-0 mt-3 mt-md-0"> <a class="nav-link nav-link-btn-2 text-center d-block mt-md-4 mt-0" href="#">Contact Levitating Elephant  Expert</a> </div>
+  <div class="row" >  
     <div class="col-12 social-links text-start mt-3">
       <div class="social-list"> <a href="" class="fa-brands fa-linkedin-in"></a> </div>
     </div>

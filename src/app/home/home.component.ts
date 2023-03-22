@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AjaxService, API } from '../common/levitating.ajaxsevice';
+import { Directive, ElementRef, HostListener } from '@angular/core';
+import * as AOS from 'aos';
+
 
 @Component({
   selector: 'app-home',
@@ -13,8 +16,8 @@ export class HomeComponent implements OnInit {
  isSubmitted = false;
  api = new API();
  captcha = false;
-
-  constructor(public fb:FormBuilder, public ajaxservice:AjaxService, public router:Router) { }
+ lengthD:any=0;
+  constructor(public fb:FormBuilder, public ajaxservice:AjaxService, public router:Router,private el: ElementRef) { }
 
   ngOnInit(): void {
     localStorage.setItem('join','0'); 
@@ -25,10 +28,21 @@ export class HomeComponent implements OnInit {
       description:['']
     })
 
+    AOS.init({
+      easing: 'ease-out-back',
+      duration: 1000
+    });
+
   }
 
   get f(){
     return this.contactDetails.controls;
+  }
+
+  checkLength(){
+    let count = this.contactDetails.value.description;
+    this.lengthD = count.length;
+     console.log('length',this.lengthD)
   }
 
   checkValue(event:any){
@@ -64,5 +78,22 @@ export class HomeComponent implements OnInit {
      }
     }
   }
+
+  
+  @HostListener('input') onInput() {
+    this.adjust();
+  }
+  
+  
+
+  
+  private adjust(): void {
+    this.el.nativeElement.style.overflow = 'hidden';
+    this.el.nativeElement.style.height = 'auto';
+    this.el.nativeElement.style.height = this.el.nativeElement.scrollHeight + 'px';
+  }
+  
+  
+
 
 }

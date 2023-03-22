@@ -3,6 +3,28 @@
 	margin-right: 14px;
 }
 
+
+img.img-fluid.gifimg.aos-init.aos-animate {
+    position: absolute;
+    left: 0;
+    width: 37%;
+    bottom: 0;
+    border-radius: 100%;
+    top: 0;
+    margin: auto;
+    right: 0;
+	opacity: 0.5;
+}
+.butterfly23 {
+    position: absolute;
+    width: 160px;
+    top: -95px;
+    right: 22%;
+	
+}
+.butterfly {
+	position: relative;
+}
 .eligibilty-text {
 	padding-left: 62px
 }
@@ -58,6 +80,8 @@ img.fix-chek {
 	font-family: 'Century Gothic';
 	color: #5F3A96;
 	font-size: 45px;
+	z-index: 99;
+	position: relative;
 }
 
 .divder {
@@ -140,7 +164,7 @@ img.fix-chek {
 }
 
 .page-banner {
-	background: #5F3A96;
+	background: #502E8B;
 	min-height: 250px;
 	display: flex;
 	align-items: center;
@@ -194,12 +218,12 @@ img.fix-chek {
 	position: relative;
 }
 
-.butterfly img {
-	position: absolute;
-	left: 29%;
-	width: 46%;
-	top: -136%;
-}
+// .butterfly img {
+// 	position: absolute;
+// 	left: 29%;
+// 	width: 46%;
+// 	top: -136%;
+// }
 
 @media(max-width:1024px) {
 	.eligibilty-img {
@@ -236,15 +260,19 @@ img.fix-chek {
 	}
 
 	.page-banner {
-		background: #5F3A96;
+		background: #502E8B;
 		padding: 20px 0;
 		overflow-x: hidden;
 	}
 
 	.title {
 		font-size: 35px;
+		z-index: 999;
+		position: relative;
 	}
-
+	.red{
+		color:red;
+	}
 	.page-banner-left img {
 		position: relative;
 		top: 0;

@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
@@ -18,6 +18,15 @@ export class AjaxService {
      )
     }
 
+    getDataAccess(url: string,data:any): Observable<any> {
+        return this.http.get<any>(`${url}${data}`)
+        .pipe(
+           map(res => {
+               return res;
+           })
+        )
+       }
+
     postData(url: string, body: any): Observable<any> {
         return this.http.post<any>(url,body)
         .pipe(
@@ -35,6 +44,29 @@ export class AjaxService {
             })
         );
     }
+
+    // urlcheck = 'https://9066-103-158-30-116.in.ngrok.io/api/submit/job-application'
+
+    uploadMedia(url: string,file:any) {
+        const endpoint = url;
+        /* const formData: FormData = new FormData();
+        formData.append('file', file); */
+        return this.http
+            .post(endpoint, file, { headers: { 'Content-Type': 'multipart/formData' } })
+            .pipe(
+                map(res => {
+                    return res;
+                })
+            );
+    }
+
+    public uploadFile(url:any,formData:any, options?:any): Observable<any> {
+        let headers: HttpHeaders = new HttpHeaders();
+        headers = headers.append('Content-Type', 'multipart/formData');
+        options = options ? options : headers;
+        return this.http.post(url, formData, options);
+      }
+      
 }
 
 
@@ -48,7 +80,7 @@ export class API {
 
     getQues = this.baseUrl+"getQuestions?formID=1";
     submit_ans = this.baseUrl + "submit-answers";
-    OtpVerification = this.baseUrl + 'fetch-details';
+    OtpVerification = this.baseUrl + 'fetch-details?passcode=';
     AllJobList = this.baseUrl + "AlljobList";
     jobApplication = this.baseUrl + "submit/job-application";
     contactDetails = this.baseUrl + "submit/contact-details";

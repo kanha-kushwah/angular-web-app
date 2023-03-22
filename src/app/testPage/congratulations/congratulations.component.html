@@ -5,6 +5,8 @@
                 <div class="col-lg-7"><h4 class="single-txtc">Congratulations you have successfully<br> completed the eligibility test.
                 </h4>
                    <p class="cong-p">Please enter your full name and email address below.</p>
+                   <p class="cong-p1">A six digit key to access the <b routerLink="/openings" style="cursor: pointer;"> Openings </b> at LE will be mailed to you.<span style="color: red;">*</span> </p>
+
                 <div class="form-congrates">
 
                   <form [formGroup]="userDetail" (ngSubmit)="submitAns()">
@@ -43,7 +45,6 @@
                     <button type="submit" class="btn btn-primary">Submit</button>
                   </form>
 
-                   <p class="cong-p1"><span style="color: red;">*</span> A six digit key to access the Openings at LE will be mailed to you.</p>
                   </div>
 
                 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-about',
@@ -11,6 +12,11 @@ export class AboutComponent implements OnInit {
   constructor(public router:Router) { }
 
   ngOnInit(): void {
+    AOS.init({
+      easing: 'ease-out-back',
+      duration: 1000
+    });
+
   }
 
   goToJoin(){
@@ -18,4 +24,5 @@ export class AboutComponent implements OnInit {
   this.router.navigate(['/joinus']);
   }
 
+  
 }

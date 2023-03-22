@@ -4,6 +4,7 @@ import { AboutComponent } from './about/about.component';
 import { CareersComponent } from './careers/careers.component';
 import { HomeComponent } from './home/home.component';
 import { JoinUsComponent } from './join-us/join-us.component';
+import { TestCongratesComponent } from './test-congrates/test-congrates.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
 
 const routes: Routes = [
@@ -22,7 +23,8 @@ const routes: Routes = [
   },
   {
     path:'about',
-    component: AboutComponent
+    // component: AboutComponent
+    loadChildren: () => import('./about/about.module').then(m=> m.AboutModule)
   },
   {
     path:'joinus',
@@ -31,6 +33,10 @@ const routes: Routes = [
   {
     path:'thankyou',
     component: ThankyouComponent
+  },
+  {
+    path:'testCongrates',
+    component: TestCongratesComponent
   },
 ];
 

@@ -2,8 +2,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
 
-
-
+img.img-fluid.gifimg.aos-init.aos-animate {
+    position: absolute;
+    left: 0;
+    width: 37%;
+    bottom: 0;
+    border-radius: 100%;
+    top: 0;
+    margin: auto;
+    right: 0;
+	opacity: 0.5;
+}
+.butterfly23 {
+    position: absolute;
+    width: 160px;
+    top: -95px;
+    right: 22%;
+	
+}
 
 .header-top {
 	position: absolute;
@@ -56,7 +72,10 @@
 	font-family: 'Century Gothic';
 	color: #5F3A96;
 	font-size: 45px;
+	position: relative;
+    z-index: 1;
 }
+
 .divder {
 	width:62px;
 	height: 1px;
@@ -401,7 +420,7 @@ background: linear-gradient(to right,  #ffffff 80%,#5f3a96 80%); /* W3C, IE10+, 
 }
 
 .page-banner {
-	background:#5F3A96;
+	background:#502E8B;
 	min-height: 250px;
 	display: flex;
 	align-items: center;
@@ -599,7 +618,7 @@ background: linear-gradient(to right,  #ffffff 80%,#5f3a96 80%); /* W3C, IE10+, 
 }
 
 .about-bg {
-	background: url(../../assets/images/texture-background.svg) no-repeat;
+	background: url(../../assets/images/main-elephent.svg) no-repeat;
 	background-position: center;
 	padding: 50px;
 	background-size: cover;
@@ -713,12 +732,12 @@ background: linear-gradient(to right,  #ffffff 80%,#5f3a96 80%); /* W3C, IE10+, 
 .butterfly {
 	position: relative;
 }
-.butterfly img {
-	position: absolute;
-	left: 29%;
-	width: 46%;
-	top: -136%;
-}
+// .butterfly img {
+// 	position: absolute;
+// 	left: 29%;
+// 	width: 46%;
+// 	top: -136%;
+// }
 
 
 .collapse-rajvi img{transform: rotate(-90deg); transition: 0.3s all ease-in-out;}
@@ -786,7 +805,7 @@ transform: rotate(0deg);
 	width:55px;
 }
 .page-banner {
-	background: #5F3A96;
+	background: #502E8B;
 	padding:20px 0;
 	overflow-x: hidden;
 }
@@ -840,12 +859,12 @@ transform: rotate(0deg);
 	margin-bottom: 0;
 }
 
-.butterfly img {
-	position: absolute;
-	left: 2%;
-	width: 100%;
-	top: -105%;
-}
+// .butterfly img {
+// 	position: absolute;
+// 	left: 2%;
+// 	width: 100%;
+// 	top: -105%;
+// }
 .founder-text {
 	padding:20px;
 }

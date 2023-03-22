@@ -5,7 +5,9 @@
 *{
     font-family: 'Poppins';
 }
-
+.modal-backdrop{
+	--bs-backdrop-zindex:1 !important
+}
 .form-control:focus {
     background-color: #fff;
     box-shadow: 0 0 0 0.15rem transparent !important;

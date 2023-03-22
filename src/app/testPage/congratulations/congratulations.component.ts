@@ -66,7 +66,10 @@ export class CongratulationsComponent implements OnInit {
 
   this.ajaxservice.postData(this.api.submit_ans,data)
   .subscribe((data:any)=>{
-    this.router.navigate(['/openings']);
+    // this.router.navigate(['/openings']);
+    this.router.navigate(['/testCongrates']);
+
+    
   })
     
   }
