@@ -30,21 +30,13 @@ export class ApplyOpeningOtpComponent implements OnInit {
   const formData = new FormData();
   formData.append('passcode',this.otp);
   
-  this.ajaxservice.postData(this.api.OtpVerification,formData)
+  this.ajaxservice.getDataAccess(this.api.OtpVerification,this.otp)
   .subscribe((data1)=>{
    if(data1.status == 200)
    {
-    let data = data1;
+    let data = data1.obj;
     this.otp = '';
-   /* let data = {
-    "candidateId": 152,
-    "candidateName": "abc",
-    "candidateEmail": "xyz@ab",
-    "candidateCode": "333569",
-    "logDatetime": "2023-03-14T09:57:58.796+00:00",
-    "logState": 1
-   } */
-   
+   console.log('userDetails',data)
    localStorage.setItem('userDetails',JSON.stringify(data));
 
    this.isOtpValid = false;

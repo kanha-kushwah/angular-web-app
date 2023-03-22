@@ -18,6 +18,11 @@ import { AboutComponent } from './about/about.component';
 import { JoinUsComponent } from './join-us/join-us.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
 import { AutosizeModule } from 'ngx-autosize';
+import { WhyLEComponent } from './about/why-le/why-le.component';
+import { BoardComponent } from './about/board/board.component';
+import { TeamComponent } from './about/team/team.component';
+import { AboutRoutingModule } from './about/about-routing.module';
+import { TestCongratesComponent } from './test-congrates/test-congrates.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +32,10 @@ import { AutosizeModule } from 'ngx-autosize';
     AboutComponent,
     JoinUsComponent,
     ThankyouComponent,
+    WhyLEComponent,
+    BoardComponent,
+    TeamComponent,
+    TestCongratesComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,8 +44,9 @@ import { AutosizeModule } from 'ngx-autosize';
     AppRoutingModule,
     SharedModule,
     CareersRoutingModule,
+    AboutRoutingModule,
     HttpClientModule,
-    AutosizeModule
+    AutosizeModule,
   ],
   providers: [
     ApiService,

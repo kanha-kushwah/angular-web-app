@@ -1,24 +1,26 @@
-<div class="header">
+<div id="trans" class="header">
     <app-header></app-header>
 </div>
 
-<section class="banner-home" >
+<section class="banner-home">
     <div class="container-fluid">
-        <div class="row align-items-center">
-            <div class="col-lg-6 banner-home-left  text-center d-flex align-items-center justify-content-center"> <img
-                    src="../../assets/images/combine.svg" data-aos-delay="400" data-aos="zoom-in" class="img-fluid"></div>
-            <div class="col-lg-6 banner-home-right py-lg-5 px-lg-5" data-aos="fade-left">
-                <!--- <div class="banner-home-right-top" >Human Intuition + Machine Intelligence =</div>-->
-                <h1>The Creative Innovators</h1>
-                <p class="pt-lg-4">We are creating, developing and investing in products and services that harnesses the
-                    power of human intuition with machine intelligence.
-                </p>
-                <p>Let us shape the future together</p>
-                <a routerLink="/joinus" class="btn-theme mt-lg-5"> Join us</a>
-            </div>
+      <div class="row align-items-center">
+        <div class="col-lg-6 banner-home-left  text-center d-flex align-items-center justify-content-center">
+   <img src="../../assets/images/le.gif" data-aos-delay="400" data-aos="zoom-in" class="img-fluid gifimg">
+  
+        <img src="../../assets/images/letest-bg.png" data-aos-delay="400" data-aos="zoom-in" class="img-fluid">
+  
         </div>
+        <div class="col-lg-6 banner-home-right py-lg-5 px-lg-5" data-aos="fade-left">
+         <!--- <div class="banner-home-right-top" >Human Intuition + Machine Intelligence =</div>-->
+          <h1 >The Creative Innovators</h1>
+          <p class="pt-lg-4">We are creating, developing and investing in products and services that harnesses the power of human intuition with machine intelligence.
+  </p>
+  <p>Let us shape the future together</p>
+          <a class="btn-theme mt-lg-5" routerLink="/joinus"> Join us</a> </div>
+      </div>
     </div>
-</section>
+  </section>
 
 
 
@@ -127,17 +129,17 @@
                         class="divder"></span>ABOUT US</h2>
                 <div class="text-box-about" data-aos="fade-right">
                     <div class="pb-3">
-                        <div class="text-box-about-sub theme-text"> <a routerLink="/about" class="arrow_btn">Why LE <img
+                        <div class="text-box-about-sub theme-text"> <a routerLink="/about/whyle" class="arrow_btn">Why LE <img
                                     src="../../assets/images/arrow.svg"></a></div>
                         <p>A note from the Founders.</p>
                     </div>
                     <div class="pb-3">
-                        <div class="text-box-about-sub theme-text"> <a routerLink="/about" class="arrow_btn">Board <img
+                        <div class="text-box-about-sub theme-text"> <a routerLink="/about/board" class="arrow_btn">Board <img
                                     src="../../assets/images/arrow.svg"></a></div>
                         <p>Meet the founding members.</p>
                     </div>
                     <div>
-                        <div class="text-box-about-sub theme-text"> <a routerLink="/about" class="arrow_btn">Team <img
+                        <div class="text-box-about-sub theme-text"> <a routerLink="/about/team" class="arrow_btn">Team <img
                                     src="../../assets/images/arrow.svg"></a></div>
                         <p>The 50+ years of experience backing LE</p>
                     </div>
@@ -251,8 +253,9 @@
 
                     
                     <div class="form-group">
-                        <textarea autosize class="my-textarea mb-0 txta form-control" placeholder="Drop a note" formControlName="description" ></textarea>
-                        <div class="text-end pt-1"><small> Min 100 characters</small></div>
+                        <textarea autosize class="my-textarea mb-0 txta form-control" placeholder="Drop a note"
+                         formControlName="description" maxlength="100" (ngModelChange)="checkLength()" [ngClass]="{red: lengthD == '100'}"></textarea>
+                        <div class="text-end pt-1"><small> Min 100 characters ({{lengthD}}/100)</small></div>
                     </div>
                     <div class="pt-3"> 
                         <!-- <img src="../../assets/images/robot.png">  -->

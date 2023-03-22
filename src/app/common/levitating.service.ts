@@ -10,7 +10,7 @@ export class LevitatingService {
 
 
   allJobList = [
-    {
+    /* {
       jobId: 1,
       jobTitle: "java developer",
       jobDescription: "good skills in creating API",
@@ -45,7 +45,7 @@ export class LevitatingService {
     requiredExperience: "10 years",
     jobLocation: "Goa",
     costTocompany: "25 LPA"
-  }
+  } */
   ];
 
   testQuestions = [

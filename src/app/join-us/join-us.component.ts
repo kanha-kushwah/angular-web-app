@@ -12,10 +12,10 @@ export class JoinUsComponent implements OnInit {
   contactDetails!:FormGroup;
   isSubmitted = false;
   api = new API();
-  joinValue:any="Join Us";
+  joinValue:any="JOIN US";
   title:any;
   captcha = false;
-
+  lengthD:any=0;
   constructor(public fb:FormBuilder, public ajaxservice:AjaxService, public router:Router) { }
 
   ngOnInit(): void { 
@@ -24,10 +24,10 @@ export class JoinUsComponent implements OnInit {
 
     if(this.joinValue == '1')
     {
-     this.title = "JOIN ME ON MY JOURNEY";
+     this.title = "JOIN ME";
     }
     else{
-      this.title = "Join Us";
+      this.title = "JOIN US";
     }
 
     this.contactDetails = this.fb.group({
@@ -40,6 +40,12 @@ export class JoinUsComponent implements OnInit {
 
   get f(){
     return this.contactDetails.controls;
+  }
+
+   checkLength(){
+    let count = this.contactDetails.value.description;
+    this.lengthD = count.length;
+     console.log('length',this.lengthD)
   }
 
   checkValue(event:any){

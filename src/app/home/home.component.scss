@@ -16,6 +16,37 @@ label.form-check-label{
 	color: rgba(30, 30, 30, 0.49);
 
 }
+.red{
+	color:red;
+}
+.banner-home-left {
+    position: relative;
+}
+.gifimg {
+    position: absolute;
+    top: 15%;
+    bottom: 0;
+    width: 60% !important;
+    left: auto;
+    right: 22%;
+    margin: auto;
+    bottom: 0;
+    height: auto !important;
+    margin: auto !important;
+    border-radius: 200px;
+}
+.banner-home-left {
+    position: relative;
+}
+
+div#trans {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    transition: 0.5s;
+}
 img.fix-chek {
     margin-left: 12px;
 }
@@ -44,7 +75,7 @@ body.modal-open {
 	min-height:100vh;
 }
 .modal.menu-right .modal-content {
-	background-color: #5F3A96;
+	background-color: #502E8B;
 	padding-left:40px;
 	padding-right:40px;
 }
@@ -89,7 +120,7 @@ body.modal-open {
 	position: relative;
 }
 .banner-home-left {
-	background: #5F3A96;
+	background: #502E8B;
 	padding: 100px 50px;
 	min-height: 100vh;
 	padding-bottom: 30px;
@@ -104,7 +135,7 @@ body.modal-open {
 }
 .banner-home h1 {
 	font-family: 'Century Gothic';
-	color: #5F3A96;
+	color: #502E8B;
 	font-size: 55px;
 	line-height: 57px;
 }
@@ -727,11 +758,12 @@ background: linear-gradient(to right,  #ffffff 80%,#5f3a96 80%); /* W3C, IE10+, 
 	padding-left: 0;
 	padding-right: 0;
 }
+
 .banner-home-left img {
-	margin-top: -20px;
-	width: auto;
-	max-width: initial;
-	height:108vh;
+    margin-top: 90px;
+    width: auto;
+    max-width: initial;
+    height: 84vh;
 }
 
 }
@@ -939,7 +971,6 @@ background: linear-gradient(to right,  #ffffff 80%,#5f3a96 80%); /* W3C, IE10+, 
 	width: 100%;
 	margin-bottom: 30px;
 }
-
 
 .our-product-box-text {
 	height: auto;

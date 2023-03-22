@@ -39,6 +39,8 @@ export class OpeningFillDetailsComponent implements OnInit {
   fileChange(event:any){
   console.log('target file',event.target.files[0])
   this.filedata = event.target.files[0];
+
+  console.log('file',this.filedata)
      
     let fullpath:any = this.fillDetails.value.file;
     let filename:any = fullpath.split('\\').pop().split('/').pop();
@@ -66,28 +68,43 @@ export class OpeningFillDetailsComponent implements OnInit {
   {
     this.isSubmitted = true;
   }else{
+    this.router.navigate(['/congrates']);
     this.isSubmitted = false;
 
     let fullpath:any = this.fillDetails.value.file;
     let filename:any = fullpath.split('\\').pop().split('/').pop();
     
     // this.router.navigate(['/congrates']);
+
     let passData = {
-      "jobId":this.positionDetail1.id,
-      "candidateName":this.userDetails1.candidateName,
-      "candidateEmail": this.userDetails1.candidateEmail,
-      "candidatePhone": '',
-      "linkedinProfile": this.fillDetails.value.linkdinLink,
-      "resume":this.resume,
-      "professionalSummary":this.fillDetails.value.description      
+      jobId:this.positionDetail1.id,
+      candidateName:this.userDetails1.candidateName,
+      candidateEmail: this.userDetails1.candidateEmail,
+      candidatePhone: '',
+      linkedinProfile: this.fillDetails.value.linkdinLink,
+      resume:this.resume,
+      professionalSummary:this.fillDetails.value.description      
     }
 
-    this.ajaxservice.postDataFile(this.api.jobApplication,passData,formData)
+    console.log('strig',JSON.stringify(passData))
+    formData.append('jobdetails',JSON.stringify(passData));
+
+    /* this.ajaxservice.postDataFile(this.api.jobApplication,passData,formData)
+    .subscribe((data:any)=>{
+      this.router.navigate(['/congrates']);
+    }) */
+
+    /* this.ajaxservice.uploadFile(this.api.jobApplication,formData)
+    .subscribe((data:any)=>{
+      this.router.navigate(['/congrates']);
+    }) */
+
+    this.ajaxservice.uploadMedia(this.api.jobApplication,formData)
     .subscribe((data:any)=>{
       this.router.navigate(['/congrates']);
     })
 
-    console.log('ppppppp',passData)
+    //console.log('ppppppp',passData)
   }
   
   }
