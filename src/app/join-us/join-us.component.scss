@@ -17,11 +17,14 @@ img.img-fluid.gifimg.aos-init.aos-animate {
 }
 .butterfly23 {
 	position: absolute;
-	width: 110px !important;
-	top: -35px !important;
-	right: -5px;
-	left: auto !important;
+    width: 220px;
+    top: -95px;
+    right: 22%;
+
 }
+
+
+
 .butterfly {
 	position: relative;
 }
@@ -236,10 +239,11 @@ img.fix-chek {
 @media (max-width:767.98px) {
 	.butterfly23 {
 		position: absolute;
-		width: 130px !important;
-		top: -67px !important;
-		right: -55px;
-		left: auto !important;
+width: 110px !important;
+top: -35px !important;
+right: -5px;
+left: auto !important;
+
 	}
 
 	.container {
