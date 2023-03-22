@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AjaxService, API } from 'src/app/common/levitating.ajaxsevice';
 import { LevitatingService } from 'src/app/common/levitating.service';
 
+
 @Component({
   selector: 'app-congratulations',
   templateUrl: './congratulations.component.html',
@@ -15,14 +16,18 @@ export class CongratulationsComponent implements OnInit {
   userDetail !: FormGroup;
   latitude:any;
   longitude:any;
+  token: string|undefined;
   constructor(public levitservice:LevitatingService,
-              public ajaxservice:AjaxService, public fb:FormBuilder, public router:Router) { }
+              public ajaxservice:AjaxService, public fb:FormBuilder, public router:Router) {
+                this.token = undefined;
+               }
 
   ngOnInit(): void {
     this.getLatLong();
     this.userDetail = this.fb.group({
       name: ['',Validators.required],
       email:['',[Validators.required,Validators.pattern('[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}')]],
+      recaptcha:['',[Validators.required]]
     })
   }
 

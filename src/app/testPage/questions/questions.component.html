@@ -8,7 +8,7 @@
                                 [style]="{color: questions[i]?.color1}">←</span></h6>
                     </div>
                     <div class="col-lg-2 col-6 text-end">
-                        <h6 style="cursor: default;" [style]="{color: questions[i]?.color1}" routerLink="/">Exit</h6>
+                        <h6 style="cursor: pointer;" [style]="{color: questions[i]?.color1}" routerLink="/">Exit</h6>
                     </div>
                 </div>
             </div>
@@ -35,7 +35,10 @@
                         (change)="selectedAns(ans.value, questions[i],ans.key)"
                         >
                         <!-- [checked]="idx===0" -->
-                        <label class="form-check-label ps-3" [style]="{color: questions[i]?.fieldInlineData.textcolor}" [for]="ans.key">
+                        <!-- [style]="{color: ans.key == selectedKey ? this.questions[i].highlight:''}" -->
+                        
+                        <label class="form-check-label ps-3" [style]="{color: questions[i]?.fieldInlineData.textcolor}" [for]="ans.key"
+                        [ngStyle]="ans.key == selectedKey ? {'font-weight': '600'} : {'': ''}">
                             {{ans.value}}
                         </label>
                     </div>

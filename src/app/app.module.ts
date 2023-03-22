@@ -23,6 +23,11 @@ import { BoardComponent } from './about/board/board.component';
 import { TeamComponent } from './about/team/team.component';
 import { AboutRoutingModule } from './about/about-routing.module';
 import { TestCongratesComponent } from './test-congrates/test-congrates.component';
+import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSettings } from 'ng-recaptcha';
+import { environment } from '../environments/environment';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { CookiesComponent } from './cookies/cookies.component';
+import { TersConditionComponent } from './ters-condition/ters-condition.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +41,9 @@ import { TestCongratesComponent } from './test-congrates/test-congrates.componen
     BoardComponent,
     TeamComponent,
     TestCongratesComponent,
+    PrivacyPolicyComponent,
+    CookiesComponent,
+    TersConditionComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,8 +55,16 @@ import { TestCongratesComponent } from './test-congrates/test-congrates.componen
     AboutRoutingModule,
     HttpClientModule,
     AutosizeModule,
+    RecaptchaModule,
+    RecaptchaFormsModule
   ],
   providers: [
+    {
+      provide: RECAPTCHA_SETTINGS,
+      useValue: {
+        siteKey: environment.recaptcha.siteKey,
+      } as RecaptchaSettings,
+    },
     ApiService,
     LevitatingService,
     AjaxService,

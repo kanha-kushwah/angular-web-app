@@ -5,6 +5,12 @@
 section.congrates.h-100vh {
     margin-top: 0px;
 }
+img.imag-end {
+    width: 500px;
+    position: absolute;
+    right: 0;
+    top: 30%;
+}
 
 .row.align-items-center.cong {
     height: calc(100vh);
@@ -20,7 +26,7 @@ h4.single-txtc {
 }
 p.cong-p {
     margin: 0;
-    padding-top: 65px;
+    padding-top: 20px;
     padding-bottom: 0px;
     font-family: 'Poppins';
     font-style: normal;
@@ -39,19 +45,55 @@ p.cong-p {
     border-radius: 0;
     transition: 0.5s !important;
 }
+h3.txt-cong {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 72px;
+    letter-spacing: 0.05em;
+    color: #942C86;
+}
 
 .btn-primary {
     background: linear-gradient(89.84deg, #F0B239 0.13%, #E74643 52.69%, #723690 99.86%);
     box-shadow: 10px 10px 10px 2px rgb(0 0 0 / 25%);
     border-radius: 10px 33px;
-    padding: 16px 117px;
+    padding: 16px 50px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
-    line-height: 36px;
+    font-size: 16px;
+    line-height: 26px;
     text-align: center;
     color: #FFFFFF;
+    margin-top: 60px !important;
+    border: none !important;
+}
+.btn-primary1:hover {
+    background: linear-gradient(89.84deg, #F0B239 0.13%, #E74643 52.69%, #723690 99.86%);
+    color: #fff;
+    transition: 0.5s !important;
+}
+
+.btn-primary:hover {
+    background: #F5F7F7;
+    color: #5F3A96;
+    transition: 0.5s;
+}
+.btn-primary1 {
+    background: #F5F7F7;
+    border-radius: 7.3324px 24.1969px;
+    box-shadow: 10px 10px 10px 2px rgb(0 0 0 / 25%);
+    border-radius: 10px 33px;
+    padding: 16px 50px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+    color: #5F3A96;
     margin-top: 60px !important;
     border: none !important;
 }
@@ -59,7 +101,7 @@ p.cong-p {
 p.cong-p1 {
     margin: 0;
     padding-top: 20px;
-    padding-bottom: 60px;
+    padding-bottom: 40px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
@@ -105,39 +147,80 @@ p.cong-p1 {
     filter: brightness(0) !important;
 }
 
-@media (max-width:768px){
-    .form-congrates input {
-        width: 100%;
+// section.congrates.h-100vh {
+//     margin-top: -97px !important;
+// }
+/* congrates  end */
+@media(max-width:1280px){
+    .row.align-items-center.cong {
+        height: 100% !important;
+        padding: 40px 0px !important;
     }
     section.congrates.h-100vh {
-        background: none !important;
+        height: 100% !important;
     }
-    .btn-primary {
-        padding: 8px 70px;
-        font-size: 16px;
-        line-height: 36px;
+}
 
+@media (max-width:1024px){
+    img.imag-end {
+        width: 500px;
+        position: relative;
+        right: 0;
+        top: 30%;
     }
-    h4.single-txtc br {
+.h-100vh{
+    height: 100% !important;
+    padding: 60px 0px;
+}
+img.imag-end {
+    width: 500px;
+    position: relative;
+    right: 0;
+    top: 30%;
+    display: none;
+}
+}
+
+
+@media (max-width:768px){
+    img.imag-end {
+        width: 500px;
+        position: relative;
+        right: 0;
+        top: 30%;
         display: none;
     }
-    .congrates{
-        padding: 20px 0px;
+    h4.single-txtc.pt-5{
+        padding-top: 20px !important;
     }
-    
-
-p.cong-p{
-    padding-top: 30px;
-    padding-bottom: 30px;
+    h3.txt-cong {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 37px;
+        padding-top: 30px;
+        letter-spacing: 0.05em;
+        color: #942C86;
+    }
+    h4.single-txtc {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 32px;
+        letter-spacing: 0.05em;
+        color: #942C86;
+        
+    }
+    .btn-primary1{
+        padding: 16px 27px;
+        margin-top: 30px !important;
+        min-width: 134px !important;
+    }
+    .btn-primary{
+        padding: 16px 27px;
+        margin-top: 30px !important;
+        min-width: 134px !important;
+    }
 }
-h4.single-txtc {
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 26px;
-    line-height: 36px;
-    letter-spacing: 0.05em;
-    color: #942C86;
-}
-}
-/* congrates  end */

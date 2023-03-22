@@ -138,11 +138,11 @@
                                     src="../../assets/images/arrow.svg"></a></div>
                         <p>Meet the founding members.</p>
                     </div>
-                    <div>
+                    <!-- <div>
                         <div class="text-box-about-sub theme-text"> <a routerLink="/about/team" class="arrow_btn">Team <img
                                     src="../../assets/images/arrow.svg"></a></div>
                         <p>The 50+ years of experience backing LE</p>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="col-lg-7 about-img" data-aos="fade-left"><img src="../../assets/images/about.png" class="img-fluid"></div>
@@ -260,11 +260,32 @@
                     <div class="pt-3"> 
                         <!-- <img src="../../assets/images/robot.png">  -->
 
-                        <div class="pt-3">  <div class="form-check" for="flexCheckDefault">
-                            <input class="form-check-input" type="checkbox" value=""  id="flexCheckDefault" (click)="checkValue($event)">
+                        <div class="pt-3">  <div class="form-check p-0" for="flexCheckDefault">
+                            <!-- <input class="form-check-input" type="checkbox" value=""  id="flexCheckDefault" (click)="checkValue($event)">
                             <label class="form-check-label" for="flexCheckDefault">
                               i am not robot <img class="fix-chek" src="../../assets/images/checkbox.svg" alt="">
-                            </label>
+                            </label> -->
+
+
+                           <!--  <re-captcha id="recaptcha" name="recaptcha" #recaptcha="ngModel" 
+                            [(ngModel)]="token" required 
+                            [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)">
+                            </re-captcha> -->
+
+                            <re-captcha id="recaptcha" name="recaptcha"
+                            [(ngModel)]="token" required formControlName="recaptcha">
+                            </re-captcha>
+
+                            <div *ngIf="isSubmitted && f.recaptcha?.errors" >
+                                <div *ngIf="f.recaptcha?.errors?.required">
+                                  <p style="color: red;font-size: 13px;padding-top: 3px;">This field is required</p>
+                                </div>
+                            </div>
+
+                            <!-- <div *ngIf="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)" class="invalid-feedback">
+                                <div *ngIf="recaptcha.errors?.['required']">This field is required.</div>
+                            </div> -->
+
                           </div>
                         </div>
                     </div>

@@ -11,20 +11,13 @@
 	padding-top: 60px;
   
   }
+
+  
   #exampleModal{
 	  z-index: 99999 !important;
 	  
   }
-  // .logofix{
-  // 	display: none;
-  // }
-  // .fixed-top .logofix{
-  // 	display: block !important;
-  // } 
-  
-  // .fixed-top .logo-after{
-  // 	display: none !important;
-  // } 
+
   
   
   ul.menu-right-nav li a {
@@ -65,7 +58,9 @@
 	font-size: 36px;
 	margin-left: 50px;
   }
-  
+  div#exampleModal {
+    padding: 0 !important;
+}
   
   
   section{overflow-x: hidden;}
@@ -186,6 +181,16 @@
 	  width: 88%;
   }
   
+  .btn.menu-btn svg line {
+    fill: #FFF !important;
+    stroke: #FFF;
+}
+.logo-after {
+    width: 160px;
+}
+img.logofix{
+	width: 160px;
+}
   }
   
   

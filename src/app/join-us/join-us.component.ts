@@ -15,6 +15,7 @@ export class JoinUsComponent implements OnInit {
   joinValue:any="JOIN US";
   title:any;
   captcha = false;
+  token: string|undefined;
   lengthD:any=0;
   constructor(public fb:FormBuilder, public ajaxservice:AjaxService, public router:Router) { }
 
@@ -34,7 +35,8 @@ export class JoinUsComponent implements OnInit {
       name: ['',[Validators.required]],
       email:['',[Validators.required,Validators.pattern('^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})|(^[0-9]{10})+$')]],
       position : ['',[Validators.required]],
-      description:['']
+      description:[''],
+      recaptcha:['',[Validators.required]]
     })
   }
 
@@ -65,7 +67,7 @@ export class JoinUsComponent implements OnInit {
       this.isSubmitted = true;
     }else{
       this.isSubmitted = false;
-      if(this.captcha){
+      // if(this.captcha){
       let contactData = {
         candidateName:this.contactDetails.value.name,
         candidateEmail:this.contactDetails.value.email,
@@ -78,7 +80,7 @@ export class JoinUsComponent implements OnInit {
         this.router.navigate(['/thankyou']);
         this.contactDetails.reset();
       })
-    }
+       // }
     }
   }
 

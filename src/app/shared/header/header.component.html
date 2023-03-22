@@ -10,13 +10,29 @@
           <img  routerLink="/" class="logofix" src="../../../assets/images/logo-color.png" alt=""  width="210" *ngIf=" (loaderservice.currentUrl != '/home' && loaderservice.currentUrl != '/')">
       </div>
         <div class="col-lg-2 col-4 text-end">
-          <button  (click)="openNav()"  type="button" class="btn menu-btn p-0" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <button  (click)="openNav()"  type="button" class="btn menu-btn p-0" data-bs-toggle="modal" data-bs-target="#exampleModal"  *ngIf=" (loaderservice.currentUrl == '/home' || loaderservice.currentUrl == '/') && white && !blue">
             <svg width="36" height="35" viewBox="0 0 41 30" fill="none" xmlns="http://www.w3.org/2000/svg">
               <line y1="1.5" x2="41" y2="1.5" stroke="#5F3A96" stroke-width="3"/>
               <line y1="14.5" x2="41" y2="14.5" stroke="#5F3A96" stroke-width="3"/>
               <line y1="28.5" x2="41" y2="28.5" stroke="#5F3A96" stroke-width="3"/>
             </svg>
             </button>
+            
+            <button  (click)="openNav()"  type="button" class="btn menu-btn1 p-0" data-bs-toggle="modal" data-bs-target="#exampleModal"  *ngIf=" (loaderservice.currentUrl == '/home' || loaderservice.currentUrl == '/') && !white && blue">
+              <svg width="36" height="35" viewBox="0 0 41 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line y1="1.5" x2="41" y2="1.5" stroke="#5F3A96" stroke-width="3"/>
+                <line y1="14.5" x2="41" y2="14.5" stroke="#5F3A96" stroke-width="3"/>
+                <line y1="28.5" x2="41" y2="28.5" stroke="#5F3A96" stroke-width="3"/>
+              </svg>
+              </button>
+
+              <button  (click)="openNav()"  type="button" class="btn menu-btn2 p-0" data-bs-toggle="modal" data-bs-target="#exampleModal" *ngIf=" (loaderservice.currentUrl != '/home' && loaderservice.currentUrl != '/')">
+                <svg width="36" height="35" viewBox="0 0 41 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <line y1="1.5" x2="41" y2="1.5" stroke="#5F3A96" stroke-width="3"/>
+                  <line y1="14.5" x2="41" y2="14.5" stroke="#5F3A96" stroke-width="3"/>
+                  <line y1="28.5" x2="41" y2="28.5" stroke="#5F3A96" stroke-width="3"/>
+                </svg>
+                </button>
         </div>
       </div>
     </div>

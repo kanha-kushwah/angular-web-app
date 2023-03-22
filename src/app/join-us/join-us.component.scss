@@ -16,11 +16,11 @@ img.img-fluid.gifimg.aos-init.aos-animate {
 	opacity: 0.5;
 }
 .butterfly23 {
-    position: absolute;
-    width: 160px;
-    top: -95px;
-    right: 22%;
-	
+	position: absolute;
+	width: 110px !important;
+	top: -35px !important;
+	right: -5px;
+	left: auto !important;
 }
 .butterfly {
 	position: relative;
@@ -43,11 +43,11 @@ img.fix-chek {
 	margin-left: 12px;
 }
 
-.form-check {
-	border: solid 1px;
-	padding: 12px;
-	width: 240px;
-}
+// .form-check {
+// 	border: solid 1px;
+// 	padding: 12px;
+// 	width: 240px;
+// }
 
 
 
@@ -151,6 +151,8 @@ img.fix-chek {
 	background-color: #5F3A96;
 	border-color: #5F3A96;
 	transition: 0.5s;
+	box-shadow: 10px 10px 10px 2px rgba(0, 0, 0, 0.25);
+    transition: 0.5s;
 }
 
 .btn-primary {
@@ -232,6 +234,14 @@ img.fix-chek {
 }
 
 @media (max-width:767.98px) {
+	.butterfly23 {
+		position: absolute;
+		width: 130px !important;
+		top: -67px !important;
+		right: -55px;
+		left: auto !important;
+	}
+
 	.container {
 		padding-left: 20px;
 		padding-right: 20px;
