@@ -17,7 +17,8 @@ export class HomeComponent implements OnInit {
  api = new API();
  captcha = false;
  lengthD:any=0;
-  constructor(public fb:FormBuilder, public ajaxservice:AjaxService, public router:Router,private el: ElementRef) { }
+ token: string|undefined;
+  constructor(public fb:FormBuilder, public ajaxservice:AjaxService, public router:Router,private el: ElementRef) {  this.token = undefined; }
 
   ngOnInit(): void {
     localStorage.setItem('join','0'); 
@@ -25,7 +26,8 @@ export class HomeComponent implements OnInit {
       name: ['',[Validators.required]],
       email:['',[Validators.required,Validators.pattern('[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}')]],
       position : ['',[Validators.required]],
-      description:['']
+      description:[''],
+      recaptcha:['',[Validators.required]]
     })
 
     AOS.init({
@@ -54,13 +56,19 @@ export class HomeComponent implements OnInit {
   submitDetails(){
     console.log('form',this.contactDetails)
 
-    if(this.contactDetails.invalid)
+    if(this.contactDetails.status == "INVALID")
     {
       this.isSubmitted = true;
     }else{
       this.isSubmitted = false;
 
-      if(this.captcha){
+      // if(this.captcha){
+        /* if (this.contactDetails.invalid) {
+          for (const control of Object.keys(this.contactDetails.controls)) {
+            this.contactDetails.controls[control].markAsTouched();
+          }
+          return;
+        }else{ */
       let contactData = {
         candidateName:this.contactDetails.value.name,
         candidateEmail:this.contactDetails.value.email,
@@ -75,7 +83,7 @@ export class HomeComponent implements OnInit {
         this.contactDetails.reset();
         this.router.navigate(['/thankyou']);
       })
-     }
+     //}
     }
   }
 

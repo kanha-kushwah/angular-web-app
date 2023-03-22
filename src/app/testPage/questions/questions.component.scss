@@ -6,16 +6,18 @@ section.header {
     width: 100%;
     top: 0px;
 }
-
 // section.career.h-100vh {
 //     margin-top: -69px;
 // }
 .bg-color {
     min-height: 100vh !important;
 }
-
 label.form-check-label.ps-3 {
     width: 74%;
+}
+
+.red{
+    color: red;
 }
 
 .header h6 {
@@ -104,6 +106,15 @@ h4.single-txt {
 
 /* section 1 end */
 
+@media(min-width:1700px){
+section.header {
+    position: absolute;
+    background: transparent !important;
+    width: 100%;
+    top: 50px;
+}
+}
+
 @media(max-width:1600px){
     h4.single-txt{
         width: 100%;
@@ -123,6 +134,13 @@ h4.single-txt {
         flex-flow: column-reverse;
         padding-top: 105px;
         flex-direction: column-reverse;
+    }
+    .col-lg-6.ma-fx {
+        padding-left: 0px;
+    }
+    .col-lg-6 {
+        flex: 0 0 auto;
+        width: 90% !important;
     }
 
     h4.single-txt {

@@ -171,3 +171,12 @@ button.active-link {
     background: transparent;
 }
 /* CAREER  end */
+@media(max-width:768px){
+    .nav-link {
+        padding: 5px 5px !important;
+        font-size: 14px !important;
+    }
+    .nav-item {
+        margin: 0 8px;
+    }
+}

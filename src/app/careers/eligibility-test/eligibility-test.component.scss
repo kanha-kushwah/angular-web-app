@@ -98,7 +98,9 @@ button.btn.btn-primary.mt-5 {
 
 @media(max-width:768px) {
 
-
+    .text.pt-4 {
+        padding-left: 0px !important;
+    }
     .margin {
         margin-left: 0rem;
     }

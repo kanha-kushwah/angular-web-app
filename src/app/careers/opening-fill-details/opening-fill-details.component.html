@@ -73,12 +73,31 @@
               </div>
 
               <div class="mb-3 mt-4">
-                <textarea maxlength="140" class="form-control p-0" id="textarea" formControlName="description"
-                  placeholder="Introduce your professional self in less than 140 characters." rows="3"></textarea>
+                <textarea maxlength="140" autosize class="form-control p-0" id="textarea" formControlName="description"
+                  placeholder="Introduce your professional self in less than 140 characters." rows="3" 
+                  [ngClass]="{red: lengthD == '140'}" (ngModelChange)="checkLength()"></textarea>
+                  <small> Min 140 characters ({{lengthD}}/140)</small>
 
               </div>
+              <div class="pt-3">  <div class="form-check p-0" for="flexCheckDefault">
+      
 
-              <button type="submit " class="btn btn-primary mt-5" >Submit</button>
+                <re-captcha id="recaptcha" name="recaptcha"
+                [(ngModel)]="token" required formControlName="recaptcha">
+                </re-captcha>
+
+                <div *ngIf="isSubmitted && f.recaptcha?.errors" >
+                    <div *ngIf="f.recaptcha?.errors?.required">
+                      <p style="color: red;font-size: 13px;padding-top: 3px;">This field is required</p>
+                    </div>
+                </div>
+
+  
+              </div>
+            </div>
+
+
+              <button type="submit" class="btn-theme mt-5" >Submit</button>
             </form>
 
 

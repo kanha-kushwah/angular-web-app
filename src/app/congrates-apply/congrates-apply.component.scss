@@ -1,9 +1,8 @@
 /* congrates Start */
 
 
-
 section.congrates.h-100vh {
-    margin-top: 0px;
+    margin-top: -91px !important;
 }
 img.imag-end {
     width: 500px;
@@ -146,10 +145,27 @@ p.cong-p1 {
     filter: brightness(0) !important;
 }
 
-section.congrates.h-100vh {
-    margin-top: -97px !important;
-}
+// section.congrates.h-100vh {
+//     margin-top: -97px !important;
+// }
 /* congrates  end */
+
+
+@media(max-width:1280px){
+    .row.align-items-center.cong {
+        height: 100vh !important;
+        padding: 100px 0px !important;
+    }
+    section.congrates.h-100vh {
+        height: 100% !important;
+    }
+    img.imag-end {
+        width: 400px;
+        position: absolute;
+        right: 0;
+        top: 30%;
+    }
+}
 
 @media (max-width:1024px){
     img.imag-end {

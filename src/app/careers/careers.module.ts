@@ -14,8 +14,9 @@ import { EligibilityTestComponent } from './eligibility-test/eligibility-test.co
 import { InnovetorComponent } from './innovetor/innovetor.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-
-
+import { AutosizeModule } from 'ngx-autosize';
+import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSettings } from 'ng-recaptcha';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -34,8 +35,19 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     SharedModule,
     RouterModule,
+    AutosizeModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule, 
+    RecaptchaModule,
+    RecaptchaFormsModule
+  ],
+  providers: [
+    {
+      provide: RECAPTCHA_SETTINGS,
+      useValue: {
+        siteKey: environment.recaptcha.siteKey,
+      } as RecaptchaSettings,
+    },
   ]
 })
 export class CareersModule { }

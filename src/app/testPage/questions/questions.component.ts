@@ -46,6 +46,7 @@ export class QuestionsComponent implements OnInit {
       }
        if(i==0){
         this.questions[i].color1 = '#000'; 
+        this.questions[i].highlight = '#f90808';
        }
        else{
         this.questions[i].color1 = '#fff';
@@ -57,9 +58,11 @@ export class QuestionsComponent implements OnInit {
     })
   }
 
-  selectedKey:any = 1;
+  selectedKey:any = 0;
   next(event1:any, data2:any){
     console.log('next',this.i)
+
+    if(this.selectedKey>0){
     if(this.i<=6)
     {
       this.selectedAns(this.questions[this.i].fieldInlineData.options[0].value,data2,this.selectedKey);
@@ -69,11 +72,12 @@ export class QuestionsComponent implements OnInit {
       }
 
       this.i++;
-      this.selectedKey = 1;
+      this.selectedKey = 0;
     }
     else if(this.i==6){
       this.router.navigate(['/congratulations']);
     }
+  }
   }
 
   previous(){
@@ -82,8 +86,13 @@ export class QuestionsComponent implements OnInit {
       this.i--;
     }
   }
-
+  elem:any;
   selectedAns(value:any, data:any,selectedKey:any){
+
+  /*   this.elem = document.getElementById("selectedKey");
+    this.elem.classList.toggle("highlghtClass"); */
+    
+
     this.selectedKey = selectedKey;
     console.log('selected key',selectedKey)
 

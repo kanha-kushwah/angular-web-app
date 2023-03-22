@@ -1,5 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-thankyou',
@@ -8,13 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ThankyouComponent implements OnInit {
 
-  constructor(public location:Location) { }
+  constructor(public location:Location, public router:Router) { }
 
   ngOnInit(): void {
   }
 
   back(){
-  this.location.back();
+  //this.location.back();
+  this.router.navigate(['/']);
   }
 
 }

@@ -93,7 +93,7 @@ img.img-fluid.gifimg.aos-init.aos-animate {
 }
 .butterfly23 {
     position: absolute;
-    width: 160px;
+    width: 220px;
     top: -95px;
     right: 22%;
 	
@@ -853,6 +853,20 @@ transform: rotate(0deg);
 
 
 @media (max-width:767.98px) {
+
+	.page-banner {
+		min-height: 168px;
+	}
+	.butterfly23 {
+		position: absolute;
+		width: 110px !important;
+		top: -35px !important;
+		right: -5px;
+		left: auto !important;
+	}
+	img.img-fluid.gifimg.aos-init.aos-animate {
+		opacity: 1;
+	}
  	.container {
 	padding-left: 20px;
 	padding-right: 20px;

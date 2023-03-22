@@ -16,7 +16,8 @@ export class OpeningFillDetailsComponent implements OnInit {
   userDetails1:any;
   positionDetail1:any;
   api = new API();
-
+  lengthD:any=0;
+  token: string|undefined;
   constructor(public fb:FormBuilder, public location:Location, public router:Router, public ajaxservice:AjaxService) { }
 
   ngOnInit(): void {
@@ -31,9 +32,18 @@ export class OpeningFillDetailsComponent implements OnInit {
       email:['',[Validators.required,Validators.pattern('[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}')]],
       linkdinLink:[''],
       file:['',[Validators.required]],
-      description:['']
+      description:[''],
+      recaptcha:['',[Validators.required]]
     })
   }
+
+
+  checkLength(){
+    let count = this.fillDetails.value.description;
+    this.lengthD = count.length;
+     console.log('length',this.lengthD)
+  }
+
 
   filedata:any;
   fileChange(event:any){
@@ -57,8 +67,15 @@ export class OpeningFillDetailsComponent implements OnInit {
 
   submitDetails(){
 
+    const blobOverrides = new Blob([JSON.stringify(this.filedata)], {
+      type: 'application/json',
+    });
+
   const formData = new FormData();
-  formData.append('file',this.filedata);
+  formData.append('file',blobOverrides);
+
+ /*  const formData = new FormData();
+  formData.append('file',this.filedata); */
 
   this.isSubmitted = true;
   
@@ -68,7 +85,6 @@ export class OpeningFillDetailsComponent implements OnInit {
   {
     this.isSubmitted = true;
   }else{
-    this.router.navigate(['/congrates']);
     this.isSubmitted = false;
 
     let fullpath:any = this.fillDetails.value.file;
@@ -106,7 +122,7 @@ export class OpeningFillDetailsComponent implements OnInit {
 
     //console.log('ppppppp',passData)
   }
-  
+  this.router.navigate(['/congrates']);
   }
 
 }
