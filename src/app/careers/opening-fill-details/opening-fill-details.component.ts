@@ -67,15 +67,9 @@ export class OpeningFillDetailsComponent implements OnInit {
 
   submitDetails(){
 
-    const blobOverrides = new Blob([JSON.stringify(this.filedata)], {
-      type: 'application/json',
-    });
 
   const formData = new FormData();
-  formData.append('file',blobOverrides);
-
- /*  const formData = new FormData();
-  formData.append('file',this.filedata); */
+  formData.append('file',this.filedata);
 
   this.isSubmitted = true;
   
@@ -102,8 +96,14 @@ export class OpeningFillDetailsComponent implements OnInit {
       professionalSummary:this.fillDetails.value.description      
     }
 
-    console.log('strig',JSON.stringify(passData))
-    formData.append('jobdetails',JSON.stringify(passData));
+
+    const blobOverrides = new Blob([JSON.stringify(passData)], {
+      type: 'application/json',
+    });
+
+  const formData = new FormData();
+
+  formData.append('jobdetails',JSON.stringify(blobOverrides));
 
     /* this.ajaxservice.postDataFile(this.api.jobApplication,passData,formData)
     .subscribe((data:any)=>{
