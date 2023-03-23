@@ -36,9 +36,9 @@ export class JoinUsComponent implements OnInit {
       email:['',[Validators.required,Validators.pattern('^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})|(^[0-9]{10})+$')]],
       position : ['',[Validators.required]],
       description:[''],
-      recaptcha:['',[Validators.required]]
     })
   }
+  // recaptcha:['',[Validators.required]]
 
   get f(){
     return this.contactDetails.controls;
@@ -72,7 +72,8 @@ export class JoinUsComponent implements OnInit {
         candidateName:this.contactDetails.value.name,
         candidateEmail:this.contactDetails.value.email,
         logState: "1",
-        candidateDesrciption:this.contactDetails.value.description
+        candidateDesrciption:this.contactDetails.value.description,
+        submitFrom:this.title
       }
       // this.router.navigate(['/']);
       this.ajaxservice.postData(this.api.contactDetails,contactData)

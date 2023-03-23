@@ -16,7 +16,7 @@
           <h1 >The Creative Innovators</h1>
           <p class="pt-lg-4">We are creating, developing and investing in products and services that harnesses the power of human intuition with machine intelligence.
   </p>
-  <p>Let us shape the future together</p>
+  <p>Let us shape the future together.</p>
           <a class="btn-theme mt-lg-5" routerLink="/joinus"> Join us</a> </div>
       </div>
     </div>
@@ -273,14 +273,14 @@
                             </re-captcha> -->
 
                             <re-captcha id="recaptcha" name="recaptcha"
-                            [(ngModel)]="token" required formControlName="recaptcha">
+                            [(ngModel)]="token" formControlName="recaptcha">
                             </re-captcha>
 
-                            <div *ngIf="isSubmitted && f.recaptcha?.errors" >
+                            <!-- <div *ngIf="isSubmitted && f.recaptcha?.errors" >
                                 <div *ngIf="f.recaptcha?.errors?.required">
                                   <p style="color: red;font-size: 13px;padding-top: 3px;">This field is required</p>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <!-- <div *ngIf="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)" class="invalid-feedback">
                                 <div *ngIf="recaptcha.errors?.['required']">This field is required.</div>

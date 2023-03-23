@@ -28,6 +28,8 @@ import { environment } from '../environments/environment';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { CookiesComponent } from './cookies/cookies.component';
 import { TersConditionComponent } from './ters-condition/ters-condition.component';
+import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
+// import { HashLocationStrategy,LocationStrategy} from '@angular/common'
 
 @NgModule({
   declarations: [
@@ -56,21 +58,21 @@ import { TersConditionComponent } from './ters-condition/ters-condition.componen
     HttpClientModule,
     AutosizeModule,
     RecaptchaModule,
-    RecaptchaFormsModule
+    RecaptchaFormsModule,
+    RecaptchaV3Module,
   ],
+  
   providers: [
     {
-      provide: RECAPTCHA_SETTINGS,
-      useValue: {
-        // siteKey: environment.recaptcha.siteKey,
-        siteKey: '6LfKNi0cAAAAACeYwFRY9_d_qjGhpiwYUo5gNW5-',
-      } as RecaptchaSettings,
+        provide: RECAPTCHA_V3_SITE_KEY,
+        useValue: '6Lf5qyQlAAAAANLfOjcRLuQesQejrboD73xVtCqO',
     },
     ApiService,
     LevitatingService,
     AjaxService,
     LoaderService,
     { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
+    // {provide:LocationStrategy, useClass:HashLocationStrategy}
   ],
   bootstrap: [AppComponent]
 })

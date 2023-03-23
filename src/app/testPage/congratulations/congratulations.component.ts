@@ -27,9 +27,9 @@ export class CongratulationsComponent implements OnInit {
     this.userDetail = this.fb.group({
       name: ['',Validators.required],
       email:['',[Validators.required,Validators.pattern('[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}')]],
-      recaptcha:['',[Validators.required]]
     })
   }
+  // recaptcha:['',[Validators.required]]
 
   get f(){
     return this.userDetail.controls;

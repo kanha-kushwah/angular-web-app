@@ -18,6 +18,14 @@ export class AjaxService {
      )
     }
 
+    recaptcha(data:any){
+    return this.http.post('https://www.google.com/recaptcha/api/siteverify',data).pipe(
+        map(res=>{
+            return res;
+        })
+    )
+    }
+
     getDataAccess(url: string,data:any): Observable<any> {
         return this.http.get<any>(`${url}${data}`)
         .pipe(
