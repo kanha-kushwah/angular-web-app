@@ -1,4 +1,5 @@
 import { Location } from '@angular/common';
+import { HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -33,9 +34,9 @@ export class OpeningFillDetailsComponent implements OnInit {
       linkdinLink:[''],
       file:['',[Validators.required]],
       description:[''],
-      recaptcha:['',[Validators.required]]
     })
   }
+  // recaptcha:['',[Validators.required]]
 
 
   checkLength(){
@@ -68,9 +69,7 @@ export class OpeningFillDetailsComponent implements OnInit {
   submitDetails(){
 
 
-  const formData = new FormData();
-  formData.append('file',this.filedata);
-
+  // const formData = new FormData();
   this.isSubmitted = true;
   
   console.log('valueee',this.fillDetails)
@@ -86,7 +85,7 @@ export class OpeningFillDetailsComponent implements OnInit {
     
     // this.router.navigate(['/congrates']);
 
-    let passData = {
+    /* let passData = {
       jobId:this.positionDetail1.id,
       candidateName:this.userDetails1.candidateName,
       candidateEmail: this.userDetails1.candidateEmail,
@@ -99,11 +98,23 @@ export class OpeningFillDetailsComponent implements OnInit {
 
     const blobOverrides = new Blob([JSON.stringify(passData)], {
       type: 'application/json',
-    });
+    }); */
 
   const formData = new FormData();
+  formData.append('file',this.filedata);
+  //formData.append('jobdetails',blobOverrides);
+  formData.append('jobId',this.positionDetail1.id);
+  formData.append('candidateName',this.userDetails1.candidateName);
+  formData.append('candidateEmail',this.userDetails1.candidateEmail);
+  formData.append('candidatePhone','');
+  formData.append('linkedinProfile',this.fillDetails.value.linkdinLink);
+  formData.append('resume',this.resume);
+  formData.append('professionalSummary',this.fillDetails.value.description);
+  
 
-  formData.append('jobdetails',JSON.stringify(blobOverrides));
+  /* let params = new HttpParams();
+  params.append('file', this.filedata);
+  params.append('jobdetails',JSON.stringify(blobOverrides)); */
 
     /* this.ajaxservice.postDataFile(this.api.jobApplication,passData,formData)
     .subscribe((data:any)=>{

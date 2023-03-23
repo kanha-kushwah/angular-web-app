@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AjaxService, API } from '../common/levitating.ajaxsevice';
 import { Directive, ElementRef, HostListener } from '@angular/core';
 import * as AOS from 'aos';
+import { ReCaptchaV3Service } from 'ng-recaptcha';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class HomeComponent implements OnInit {
  captcha = false;
  lengthD:any=0;
  token: string|undefined;
-  constructor(public fb:FormBuilder, public ajaxservice:AjaxService, public router:Router,private el: ElementRef) {  this.token = undefined; }
+  constructor(public fb:FormBuilder, public ajaxservice:AjaxService, public router:Router,private el: ElementRef,private recaptchaV3Service: ReCaptchaV3Service) {  this.token = undefined; }
 
   ngOnInit(): void {
     localStorage.setItem('join','0'); 
@@ -27,7 +28,7 @@ export class HomeComponent implements OnInit {
       email:['',[Validators.required,Validators.pattern('[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}')]],
       position : ['',[Validators.required]],
       description:[''],
-      recaptcha:['',[Validators.required]]
+      recaptcha:['']
     })
 
     AOS.init({
@@ -62,6 +63,18 @@ export class HomeComponent implements OnInit {
     }else{
       this.isSubmitted = false;
 
+    
+        this.recaptchaV3Service.execute('importantAction')
+        .subscribe((token: string) => {
+          console.debug(`Token [${token}] generated`);
+          this.ajaxservice.recaptcha(token)
+          .subscribe((data:any)=>{
+            console.log('recaptcha responce',data)
+          })
+
+        });
+      
+
       // if(this.captcha){
         /* if (this.contactDetails.invalid) {
           for (const control of Object.keys(this.contactDetails.controls)) {
@@ -73,7 +86,8 @@ export class HomeComponent implements OnInit {
         candidateName:this.contactDetails.value.name,
         candidateEmail:this.contactDetails.value.email,
         logState: "1",
-        candidateDesrciption:this.contactDetails.value.description
+        candidateDesrciption:this.contactDetails.value.description,
+        submitFrom:'homePage'
       }
 
       // this.router.navigate(['/']);
@@ -101,7 +115,25 @@ export class HomeComponent implements OnInit {
     this.el.nativeElement.style.height = this.el.nativeElement.scrollHeight + 'px';
   }
   
-  
+  /* onCaptchaResponse(){
+    this.recaptchaV3Service.execute('importantAction')
+    .subscribe((token: string) => {
+      console.debug(`Token [${token}] generated`);
+    });
+  } */
 
+  // public send(form: any): void {
+  //   if (form.invalid) {
+  //     for (const control of Object.keys(form.controls)) {
+  //       form.controls[control].markAsTouched();
+  //     }
+  //     return;
+  //   }
+
+  //   this.recaptchaV3Service.execute('importantAction')
+  //   .subscribe((token: string) => {
+  //     console.debug(`Token [${token}] generated`);
+  //   });
+  // }
 
 }
