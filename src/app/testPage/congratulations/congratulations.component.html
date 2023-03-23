@@ -43,11 +43,12 @@
                     <p style="color: red;font-size: 13px;padding-top: 3px;">This field is required</p>
                   </div>
               </div>
-
-            
-
             </div>
           </div> -->
+
+          <re-captcha id="recaptcha" name="recaptcha"
+              [(ngModel)]="token" formControlName="recaptcha">
+          </re-captcha>
 
             <button type="submit" class="btn-theme mt-5">Submit</button>
           </form>

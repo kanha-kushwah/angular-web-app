@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AjaxService, API } from 'src/app/common/levitating.ajaxsevice';
+import { ReCaptchaV3Service } from 'ng-recaptcha';
 
 @Component({
   selector: 'app-opening-fill-details',
@@ -19,7 +20,7 @@ export class OpeningFillDetailsComponent implements OnInit {
   api = new API();
   lengthD:any=0;
   token: string|undefined;
-  constructor(public fb:FormBuilder, public location:Location, public router:Router, public ajaxservice:AjaxService) { }
+  constructor(public fb:FormBuilder, public location:Location, public router:Router, public ajaxservice:AjaxService, private recaptchaV3Service: ReCaptchaV3Service) { }
 
   ngOnInit(): void {
     this.userDetails1 = JSON.parse(localStorage.getItem('userDetails') || '{}');
@@ -34,6 +35,7 @@ export class OpeningFillDetailsComponent implements OnInit {
       linkdinLink:[''],
       file:['',[Validators.required]],
       description:[''],
+      recaptcha:['']
     })
   }
   // recaptcha:['',[Validators.required]]
@@ -79,6 +81,17 @@ export class OpeningFillDetailsComponent implements OnInit {
     this.isSubmitted = true;
   }else{
     this.isSubmitted = false;
+
+    this.recaptchaV3Service.execute('importantAction')
+        .subscribe((token: string) => {
+          console.debug(`Token [${token}] generated`);
+          this.ajaxservice.recaptcha(token)
+          .subscribe((data:any)=>{
+            console.log('recaptcha responce',data)
+          })
+
+        });
+
 
     let fullpath:any = this.fillDetails.value.file;
     let filename:any = fullpath.split('\\').pop().split('/').pop();
