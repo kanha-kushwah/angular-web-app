@@ -123,6 +123,7 @@ export class OpeningFillDetailsComponent implements OnInit {
   formData.append('linkedinProfile',this.fillDetails.value.linkdinLink);
   formData.append('resume',this.resume);
   formData.append('professionalSummary',this.fillDetails.value.description);
+  formData.append('candidateID',this.userDetails1.candidateID);
   
 
   /* let params = new HttpParams();

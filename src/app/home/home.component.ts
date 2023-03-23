@@ -67,6 +67,12 @@ export class HomeComponent implements OnInit {
         this.recaptchaV3Service.execute('importantAction')
         .subscribe((token: string) => {
           console.debug(`Token [${token}] generated`);
+
+          /* let data = {
+            response : token,
+            secret : '6Lf5qyQlAAAAANFA3mRDZCDh0gX87yHe7Ddqry7M',
+            remoteip: ''
+          } */
           this.ajaxservice.recaptcha(token)
           .subscribe((data:any)=>{
             console.log('recaptcha responce',data)
