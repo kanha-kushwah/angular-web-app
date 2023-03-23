@@ -1,13 +1,16 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { core } from "@angular/compiler";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 
 @Injectable()
 export class AjaxService {
+
     constructor(private http:HttpClient){
 
     }
+
 
     getData(url: string): Observable<any> {
      return this.http.get<any>(url)
@@ -19,7 +22,9 @@ export class AjaxService {
     }
 
     recaptcha(data:any){
-    return this.http.post('https://www.google.com/recaptcha/api/siteverify',data).pipe(
+        let headers: HttpHeaders = new HttpHeaders();
+        headers = headers.append('Access-Control-Allow-Origin', '*');
+    return this.http.post('https://www.google.com/recaptcha/api/siteverify',data, {headers: headers}).pipe(
         map(res=>{
             return res;
         })
