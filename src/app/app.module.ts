@@ -62,7 +62,8 @@ import { TersConditionComponent } from './ters-condition/ters-condition.componen
     {
       provide: RECAPTCHA_SETTINGS,
       useValue: {
-        siteKey: environment.recaptcha.siteKey,
+        // siteKey: environment.recaptcha.siteKey,
+        siteKey: '6LfKNi0cAAAAACeYwFRY9_d_qjGhpiwYUo5gNW5-',
       } as RecaptchaSettings,
     },
     ApiService,
