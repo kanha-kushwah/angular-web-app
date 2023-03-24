@@ -63,9 +63,11 @@ export class AjaxService {
     uploadMedia(url: string,file:any) {
         const endpoint = url;
         /* const formData: FormData = new FormData();
-        formData.append('file', file); */
+        formData.append('file', file); 
+        .post(endpoint, file, { headers: { 'Content-Type': 'multipart/formData' } })
+        */
         return this.http
-            .post(endpoint, file, { headers: { 'Content-Type': 'multipart/formData' } })
+            .post(endpoint, file)
             .pipe(
                 map(res => {
                     return res;

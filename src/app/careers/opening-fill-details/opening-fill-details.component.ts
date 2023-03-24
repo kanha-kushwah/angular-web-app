@@ -30,8 +30,8 @@ export class OpeningFillDetailsComponent implements OnInit {
 
     this.fillDetails = this.fb.group({
       position : [''],
-      name: ['',[Validators.required]],
-      email:['',[Validators.required,Validators.pattern('[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}')]],
+      name: [this.userDetails1.candidateName,[Validators.required]],
+      email:[this.userDetails1.candidateEmail,[Validators.required,Validators.pattern('[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}')]],
       linkdinLink:[''],
       file:['',[Validators.required]],
       description:[''],
@@ -50,7 +50,8 @@ export class OpeningFillDetailsComponent implements OnInit {
 
   filedata:any;
   fileChange(event:any){
-  console.log('target file',event.target.files[0])
+
+  console.log('target file',event)
   this.filedata = event.target.files[0];
 
   console.log('file',this.filedata)
@@ -119,11 +120,12 @@ export class OpeningFillDetailsComponent implements OnInit {
   formData.append('jobId',this.positionDetail1.id);
   formData.append('candidateName',this.userDetails1.candidateName);
   formData.append('candidateEmail',this.userDetails1.candidateEmail);
-  formData.append('candidatePhone','');
+  // formData.append('candidatePhone','12345');
   formData.append('linkedinProfile',this.fillDetails.value.linkdinLink);
   formData.append('resume',this.resume);
   formData.append('professionalSummary',this.fillDetails.value.description);
-  formData.append('candidateID',this.userDetails1.candidateID);
+  formData.append('candidateID',this.userDetails1.candidateId);
+  //formData.append('candidateID','4503');
   
 
   /* let params = new HttpParams();
@@ -147,7 +149,7 @@ export class OpeningFillDetailsComponent implements OnInit {
 
     //console.log('ppppppp',passData)
   }
-  this.router.navigate(['/congrates']);
+  // this.router.navigate(['/congrates']);
   }
 
 }
