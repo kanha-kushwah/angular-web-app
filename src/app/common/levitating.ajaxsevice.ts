@@ -58,8 +58,6 @@ export class AjaxService {
         );
     }
 
-    // urlcheck = 'https://9066-103-158-30-116.in.ngrok.io/api/submit/job-application'
-
     uploadMedia(url: string,file:any) {
         const endpoint = url;
         /* const formData: FormData = new FormData();
@@ -87,11 +85,8 @@ export class AjaxService {
 
 
 export class API {
-    // https://fa2e-2406-b400-a9-850e-583-2393-80b0-aa46.ngrok.io/api/getQuestions?formID=1
-    //getQues = "https://orko-dev-api.azurewebsites.net/api/v1/smart_forms/form1/1";
-    //baseUrl = "https://fa2e-2406-b400-a9-850e-583-2393-80b0-aa46.ngrok.io/api/";
     
-    baseUrl = "http://ec2-13-233-184-38.ap-south-1.compute.amazonaws.com:8080/api/";
+    baseUrl = "http://ec2-13-233-184-38.ap-south-1.compute.amazonaws.com:8080/le/";
 
     getQues = this.baseUrl+"getQuestions?formID=1";
     submit_ans = this.baseUrl + "submit-answers";

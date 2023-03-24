@@ -120,7 +120,7 @@ export class OpeningFillDetailsComponent implements OnInit {
   formData.append('jobId',this.positionDetail1.id);
   formData.append('candidateName',this.userDetails1.candidateName);
   formData.append('candidateEmail',this.userDetails1.candidateEmail);
-  // formData.append('candidatePhone','12345');
+  //formData.append('candidatePhone','12345');
   formData.append('linkedinProfile',this.fillDetails.value.linkdinLink);
   formData.append('resume',this.resume);
   formData.append('professionalSummary',this.fillDetails.value.description);
