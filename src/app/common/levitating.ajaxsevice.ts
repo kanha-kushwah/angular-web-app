@@ -21,7 +21,7 @@ export class AjaxService {
      )
     }
 
-    recaptcha(data:any){
+    /* recaptcha(data:any){
         let headers: HttpHeaders = new HttpHeaders();
         headers = headers.append('Access-Control-Allow-Origin', '*');
     return this.http.post('https://www.google.com/recaptcha/api/siteverify',data, {headers: headers}).pipe(
@@ -29,7 +29,7 @@ export class AjaxService {
             return res;
         })
     )
-    }
+    } */
 
     getDataAccess(url: string,data:any): Observable<any> {
         return this.http.get<any>(`${url}${data}`)
@@ -85,7 +85,7 @@ export class AjaxService {
 
 
 export class API {
-    
+   // http://localhost:8080/le/getQuestions?formID=1
     baseUrl = "http://ec2-13-233-184-38.ap-south-1.compute.amazonaws.com:8080/le/";
 
     getQues = this.baseUrl+"getQuestions?formID=1";

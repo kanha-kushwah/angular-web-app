@@ -45,7 +45,7 @@ import { environment } from 'src/environments/environment';
     {
       provide: RECAPTCHA_SETTINGS,
       useValue: {
-        siteKey:'6Lf5qyQlAAAAANLfOjcRLuQesQejrboD73xVtCqO',
+        siteKey: '6Lf_kSolAAAAALDrg7_fT-04KxttFKKjQze1VT2o',
       } as RecaptchaSettings,
     },
   ]

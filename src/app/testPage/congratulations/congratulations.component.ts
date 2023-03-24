@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AjaxService, API } from 'src/app/common/levitating.ajaxsevice';
 import { LevitatingService } from 'src/app/common/levitating.service';
-import { ReCaptchaV3Service } from 'ng-recaptcha';
 
 @Component({
   selector: 'app-congratulations',
@@ -18,7 +17,7 @@ export class CongratulationsComponent implements OnInit {
   longitude:any;
   token: string|undefined;
   constructor(public levitservice:LevitatingService,
-              public ajaxservice:AjaxService, public fb:FormBuilder, public router:Router,private recaptchaV3Service: ReCaptchaV3Service) {
+              public ajaxservice:AjaxService, public fb:FormBuilder, public router:Router) {
                 this.token = undefined;
                }
 
@@ -27,7 +26,7 @@ export class CongratulationsComponent implements OnInit {
     this.userDetail = this.fb.group({
       name: ['',Validators.required],
       email:['',[Validators.required,Validators.pattern('[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}')]],
-      recaptcha:['']
+      recaptcha:['',[Validators.required]]
     })
   }
   // recaptcha:['',[Validators.required]]
@@ -55,15 +54,14 @@ export class CongratulationsComponent implements OnInit {
     this.isSubmitted = false;
     // this.router.navigate(['/openings']);
 
-    this.recaptchaV3Service.execute('importantAction')
+    /* this.recaptchaV3Service.execute('importantAction')
         .subscribe((token: string) => {
           console.debug(`Token [${token}] generated`);
           this.ajaxservice.recaptcha(token)
           .subscribe((data:any)=>{
             console.log('recaptcha responce',data)
           })
-
-        });
+        }); */
 
   let data = {
     form_id: "1",

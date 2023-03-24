@@ -28,7 +28,7 @@ import { environment } from '../environments/environment';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { CookiesComponent } from './cookies/cookies.component';
 import { TersConditionComponent } from './ters-condition/ters-condition.component';
-import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
+import { RecaptchaV3Module } from 'ng-recaptcha';
 // import { HashLocationStrategy,LocationStrategy} from '@angular/common'
 
 @NgModule({
@@ -64,8 +64,10 @@ import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
   
   providers: [
     {
-        provide: RECAPTCHA_V3_SITE_KEY,
-        useValue: '6Lf5qyQlAAAAANLfOjcRLuQesQejrboD73xVtCqO',
+      provide: RECAPTCHA_SETTINGS,
+      useValue: {
+        siteKey: '6Lf_kSolAAAAALDrg7_fT-04KxttFKKjQze1VT2o',
+      } as RecaptchaSettings,
     },
     ApiService,
     LevitatingService,
