@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { AjaxService, API } from '../common/levitating.ajaxsevice';
 import { Directive, ElementRef, HostListener } from '@angular/core';
 import * as AOS from 'aos';
-import { ReCaptchaV3Service } from 'ng-recaptcha';
 
 
 @Component({
@@ -19,7 +18,7 @@ export class HomeComponent implements OnInit {
  captcha = false;
  lengthD:any=0;
  token: string|undefined;
-  constructor(public fb:FormBuilder, public ajaxservice:AjaxService, public router:Router,private el: ElementRef,private recaptchaV3Service: ReCaptchaV3Service) {  this.token = undefined; }
+  constructor(public fb:FormBuilder, public ajaxservice:AjaxService, public router:Router,private el: ElementRef) {  this.token = undefined; }
 
   ngOnInit(): void {
     localStorage.setItem('join','0'); 
@@ -28,7 +27,7 @@ export class HomeComponent implements OnInit {
       email:['',[Validators.required,Validators.pattern('[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}')]],
       position : ['',[Validators.required]],
       description:[''],
-      recaptcha:['']
+      recaptcha:['',[Validators.required]]
     })
 
     AOS.init({
@@ -64,21 +63,15 @@ export class HomeComponent implements OnInit {
       this.isSubmitted = false;
 
     
-        this.recaptchaV3Service.execute('importantAction')
+       /*  this.recaptchaV3Service.execute('importantAction')
         .subscribe((token: string) => {
           console.debug(`Token [${token}] generated`);
-
-          /* let data = {
-            response : token,
-            secret : '6Lf5qyQlAAAAANFA3mRDZCDh0gX87yHe7Ddqry7M',
-            remoteip: ''
-          } */
           this.ajaxservice.recaptcha(token)
           .subscribe((data:any)=>{
             console.log('recaptcha responce',data)
           })
 
-        });
+        }); */
       
 
       // if(this.captcha){

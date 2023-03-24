@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AjaxService, API } from '../common/levitating.ajaxsevice';
-import { ReCaptchaV3Service } from 'ng-recaptcha';
 
 @Component({
   selector: 'app-join-us',
@@ -18,7 +17,7 @@ export class JoinUsComponent implements OnInit {
   captcha = false;
   token: string|undefined;
   lengthD:any=0;
-  constructor(public fb:FormBuilder, public ajaxservice:AjaxService, public router:Router,private recaptchaV3Service: ReCaptchaV3Service) { }
+  constructor(public fb:FormBuilder, public ajaxservice:AjaxService, public router:Router) { }
 
   ngOnInit(): void { 
     let value = localStorage.getItem('join');
@@ -37,7 +36,7 @@ export class JoinUsComponent implements OnInit {
       email:['',[Validators.required,Validators.pattern('^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})|(^[0-9]{10})+$')]],
       position : ['',[Validators.required]],
       description:[''],
-      recaptcha:['']
+      recaptcha:['',[Validators.required]]
     })
   }
   // recaptcha:['',[Validators.required]]
@@ -71,7 +70,7 @@ export class JoinUsComponent implements OnInit {
       this.isSubmitted = false;
       // if(this.captcha){
 
-      this.recaptchaV3Service.execute('importantAction')
+      /* this.recaptchaV3Service.execute('importantAction')
         .subscribe((token: string) => {
           console.debug(`Token [${token}] generated`);
           this.ajaxservice.recaptcha(token)
@@ -79,7 +78,7 @@ export class JoinUsComponent implements OnInit {
             console.log('recaptcha responce',data)
           })
 
-        });
+        }); */
 
       let contactData = {
         candidateName:this.contactDetails.value.name,

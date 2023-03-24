@@ -47,6 +47,7 @@
                                 Orko</a> </div>
                         <div class="our-product-text-bottom pt-4"> *ORKO is currently at the market testing stage.</div>
                     </div>
+                    
                     <div class="hover-text-right">
                         <div class="our-product-box-right"> <img src="../../assets/images/orko-logo.png" width="170">
                             <div class="d-md-none mobile-hover">
@@ -260,37 +261,34 @@
                          formControlName="description" maxlength="100" (ngModelChange)="checkLength()" [ngClass]="{red: lengthD == '100'}"></textarea>
                         <div class="text-end pt-1"><small> Min 100 characters ({{lengthD}}/100)</small></div>
                     </div>
-                    <div class="pt-3"> 
-                        <!-- <img src="../../assets/images/robot.png">  -->
-
-                        <!-- <div class="pt-3">  <div class="form-check p-0" for="flexCheckDefault"> -->
-                            <!-- <input class="form-check-input" type="checkbox" value=""  id="flexCheckDefault" (click)="checkValue($event)">
-                            <label class="form-check-label" for="flexCheckDefault">
-                              i am not robot <img class="fix-chek" src="../../assets/images/checkbox.svg" alt="">
-                            </label> -->
+               
+                    <div class="pt-3">  <div class="form-check p-0" for="flexCheckDefault">
+                        <!-- <input class="form-check-input" type="checkbox" value=""  id="flexCheckDefault" (click)="checkValue($event)">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          i am not robot <img class="fix-chek" src="../../assets/images/checkbox.svg" alt="">
+                        </label> -->
 
 
-                           <!--  <re-captcha id="recaptcha" name="recaptcha" #recaptcha="ngModel" 
-                            [(ngModel)]="token" required 
-                            [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)">
-                            </re-captcha> -->
+                       <!--  <re-captcha id="recaptcha" name="recaptcha" #recaptcha="ngModel" 
+                        [(ngModel)]="token" required 
+                        [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)">
+                        </re-captcha> -->
 
-                            <re-captcha id="recaptcha" name="recaptcha"
-                            [(ngModel)]="token" formControlName="recaptcha">
-                            </re-captcha>
+                        <re-captcha id="recaptcha" name="recaptcha"
+                        [(ngModel)]="token" required formControlName="recaptcha">
+                        </re-captcha>
 
-                            <!-- <div *ngIf="isSubmitted && f.recaptcha?.errors" >
-                                <div *ngIf="f.recaptcha?.errors?.required">
-                                  <p style="color: red;font-size: 13px;padding-top: 3px;">This field is required</p>
-                                </div>
-                            </div> -->
+                        <div *ngIf="isSubmitted && f.recaptcha?.errors" >
+                            <div *ngIf="f.recaptcha?.errors?.required">
+                              <p style="color: red;font-size: 13px;padding-top: 3px;">This field is required</p>
+                            </div>
+                        </div>
 
-                            <!-- <div *ngIf="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)" class="invalid-feedback">
-                                <div *ngIf="recaptcha.errors?.['required']">This field is required.</div>
-                            </div> -->
-
-                          <!-- </div>
+                        <!-- <div *ngIf="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)" class="invalid-feedback">
+                            <div *ngIf="recaptcha.errors?.['required']">This field is required.</div>
                         </div> -->
+
+                      </div>
                     </div>
                     <div class="pt-5">
                         <button type="submit" class="btn btn-primary">Submit</button>
