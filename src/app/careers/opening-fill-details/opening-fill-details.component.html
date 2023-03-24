@@ -21,7 +21,7 @@
 
               <div class="mb-3 mt-4">
                 <input type="text" class="form-control" id="exampleInputtext" aria-describedby="emailHelp"
-                  placeholder="Name" formControlName="name" >
+                  placeholder="Name" formControlName="name" [readonly]="true">
                   <div >
 
                     <div *ngIf="isSubmitted && f.name?.errors" >
@@ -35,7 +35,7 @@
 
               <div class="mb-3 mt-4">
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                  placeholder="Email" formControlName="email">
+                  placeholder="Email" formControlName="email" [readonly]="true">
 
                   <div *ngIf="isSubmitted && f.email?.errors" >
                     <div *ngIf="f.email?.errors?.required">
