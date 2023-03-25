@@ -84,9 +84,8 @@ export class AjaxService {
 
 
 
-export class API {
-   // http://localhost:8080/le/getQuestions?formID=1
-    baseUrl = "http://ec2-13-233-184-38.ap-south-1.compute.amazonaws.com:8080/le/";
+export class API {   
+    baseUrl = "https://api.levitatingelephant.com/le/";
 
     getQues = this.baseUrl+"getQuestions?formID=1";
     submit_ans = this.baseUrl + "submit-answers";
