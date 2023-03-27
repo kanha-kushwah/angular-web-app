@@ -15,7 +15,7 @@
          <!--- <div class="banner-home-right-top" >Human Intuition + Machine Intelligence =</div>-->
 
 
-          <h1 >The Creative Innovators</h1>
+          <h1 style="font-weight: 600;" >The Creative Innovators</h1>
           <p class="pt-lg-4">We are creating, developing and investing in products and services 
             that harnesses the power of human intuition with machine intelligence.            
             </p>
@@ -29,8 +29,8 @@
 
 <section class="py-90 product-section" id="product">
     <div class="container pb-4">
-        <h2 data-aos="zoom-in-up" class="title m-title text-center d-flex align-items-center justify-content-center">
-            <span class="divder"></span>OUR PRODUCTS</h2>
+        <h2 data-aos="zoom-in-up" style="font-weight: 600;" class="title m-title text-center d-flex align-items-center justify-content-center">
+            <span class="divder"></span>PRODUCTS</h2>
     </div>
     <div id="product-hover" class="container">
         <div class='accordeon-new  justify-content-between row'>
@@ -125,12 +125,12 @@
 
 
 
-<section class="about position-relative pt-2">
+<section class="about position-relative pt-2" id="about">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-5">
-                <h2 data-aos="fade-right" data-aos-delay="200" class="title d-flex align-items-center m-title"><span
-                        class="divder"></span>ABOUT US</h2>
+                <h2 data-aos="fade-right" style="font-weight: 600;" data-aos-delay="200" class="title d-flex align-items-center m-title"><span
+                        class="divder"></span>ABOUT</h2>
                 <div class="text-box-about" data-aos="fade-right">
                     <div class="pb-3">
                         <div class="text-box-about-sub theme-text"> <a routerLink="/about/whyle" class="arrow_btn">Why LE <img
@@ -149,14 +149,14 @@
                     </div> -->
                 </div>
             </div>
-            <div class="col-lg-7 about-img" data-aos="fade-left"><img src="../../assets/images/about.png" class="img-fluid"></div>
-        </div>
+            <div  class="col-lg-7 about-img" data-aos="fade-left"><img src="../../assets/images/about.png" class="img-fluid"></div>
+        </div >
     </div>
 </section>
 
-<section class="career pt-5 mt-lg-5">
+<section class="career pt-5 mt-lg-5" id="carrer1">
     <div class="container">
-        <h2 data-aos="zoom-in-up"
+        <h2 data-aos="zoom-in-up" style="font-weight: 600;"
             class="title m-title text-center d-flex align-items-center justify-content-center pb-3"><span
                 class="divder"></span>CAREER</h2>
         <div class="row  pt-lg-5 pt-3">
@@ -211,7 +211,9 @@
     <div class="container">
         <div class="row h-100">
             <div class="col-lg-6 " data-aos="fade-right">
-                <h3 class="pt-4">Contact Us</h3>
+            
+                <h3 class="title m-title pt-4">CONTACT</h3>
+
                 <form [formGroup]="contactDetails" (ngSubmit)="submitDetails()">
                     <div class="form-group">
                         <input type="Name" class="form-control" placeholder="Name" formControlName="name" >

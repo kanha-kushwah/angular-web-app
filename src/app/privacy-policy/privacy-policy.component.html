@@ -1,6 +1,7 @@
 <div class="header">
   <app-header></app-header>
 </div>
+
 <body class="pages">
   <div class="container">
     <div class="d-flex py-lg-5 pb-3 pt-5 justify-content-lg-center flex-wrap menu-terms"> <a (click)="goToHome( 'footer1')"
@@ -13,8 +14,9 @@
         of Service</a> <a routerLink="/privacy" routerLinkActive="active-link" class="ppx-lg-3 px-2 ">Privacy Policy</a>
       <a routerLink="/cookies" routerLinkActive="active-link" class="px-lg-3 active">Cookies</a> </div>
     <div class="row">
-      <div class="col-lg-3 ">
-        <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
+      <div class="col-lg-3" style="position: relative;">
+       <div id="sticky">
+        <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light" id="test">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
@@ -31,6 +33,7 @@
             </ul>
           </div>
         </nav>
+      </div>
       </div>
       <div class="col-lg-9">
 
@@ -353,8 +356,8 @@
     </div>
   </div>
 
+</body>
 
   <div class="">
     <app-footer></app-footer>
   </div>
-</body>

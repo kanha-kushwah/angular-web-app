@@ -23,4 +23,22 @@ export class PrivacyPolicyComponent implements OnInit {
 
   }
 
+  ngAfterContentInit() {
+    (() => {
+      const nav:any = document.getElementById('test');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 80) {
+          nav.classList.add("fixed-sec");
+          document.body.style.paddingTop = '10';
+      
+        } else {
+          nav.classList.remove("fixed-sec");
+          document.body.style.paddingTop = '0';
+          console.log(scroll)
+        }
+      });
+    })
+    ()
+  }
+
 }
