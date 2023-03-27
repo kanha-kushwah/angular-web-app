@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-ters-condition',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TersConditionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
+  }
+
+  goToPart(fragment:any){
+    this.router.navigateByUrl('terms#'+ fragment);
+
+  }
+  goToHome(fragment:any){
+    this.router.navigateByUrl('home#'+ fragment);
+
   }
 
 }

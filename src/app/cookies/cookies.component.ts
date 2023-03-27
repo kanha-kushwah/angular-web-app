@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-cookies',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CookiesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
+  }
+
+
+  goToHome(fragment:any){
+    this.router.navigateByUrl('home#'+ fragment);
+
   }
 
 }

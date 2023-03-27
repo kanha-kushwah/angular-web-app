@@ -50,26 +50,35 @@
         <ul class="menu-right-nav">
           <li class="menu-right-nav-item" data-bs-dismiss="modal" aria-label="Close" routerLink="/"> <a>Home</a> </li>
           <li class="menu-right-nav-item" data-bs-dismiss="modal" aria-label="Close" routerLink="/about/whyle"> <a>About</a> </li>
-          <li class="menu-right-nav-item"> <a>OUR PRODUCTS</a></li>
+          <li class="menu-right-nav-item" data-bs-dismiss="modal" aria-label="Close" (click)="goToPart('product')"> <a>OUR PRODUCTS</a></li>
           <li class="menu-right-nav-item" data-bs-dismiss="modal" aria-label="Close" routerLink="/innovetor" > <a>CAREER</a></li>
-          <li class="menu-right-nav-item"  data-bs-dismiss="modal" aria-label="Close" routerLink="/joinus" > <a>Contact Us</a></li>
+          <li class="menu-right-nav-item" data-bs-dismiss="modal" aria-label="Close" routerLink="/joinus" > <a>Contact Us</a></li>
         </ul>
 
         <div class="menu-footer right-boxed">
   <div class="row" >  
     <div class="col-12 social-links text-start mt-3">
-      <div class="social-list"> <a href="" class="fa-brands fa-linkedin-in"></a> </div>
+      <div class="social-list"> <a href="#" class="fa-brands fa-linkedin-in"></a> </div>
     </div>
   </div>
   <div class="pb-3 pt-1">
-  <a href="#" ><svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <a href="https://in.linkedin.com/company/levitating-elephant?trk=public_profile_topcard-current-company" target="_blank" ><svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M13.5 0C6.0453 0 0 6.0453 0 13.5C0 20.9547 6.0453 27 13.5 27C20.9547 27 27 20.9547 27 13.5C27 6.0453 20.9547 0 13.5 0ZM9.57706 20.4082H6.28919V10.5166H9.57706V20.4082ZM7.93323 9.16589H7.9118C6.8085 9.16589 6.09494 8.40639 6.09494 7.45718C6.09494 6.48653 6.83034 5.74805 7.95506 5.74805C9.07979 5.74805 9.77193 6.48653 9.79335 7.45718C9.79335 8.40639 9.07979 9.16589 7.93323 9.16589ZM21.4324 20.4082H18.145V15.1164C18.145 13.7865 17.6689 12.8795 16.4793 12.8795C15.5711 12.8795 15.0301 13.4913 14.7924 14.0819C14.7055 14.2933 14.6843 14.5887 14.6843 14.8843V20.4082H11.3966C11.3966 20.4082 11.4397 11.4446 11.3966 10.5166H14.6843V11.9171C15.1212 11.2431 15.9029 10.2844 17.6473 10.2844C19.8104 10.2844 21.4324 11.6982 21.4324 14.7364V20.4082Z" fill="#fff"></path>
 </svg></a>
 </div>
   <div class="copy-right">
-    <p class="text-light"> © 2022 <a href="#" target="_blank" class="h-link text-light"> Levitating Elephant <br>Technologies Private
-      Limited</a>. All rights reserved. <br>
-      <a href="#" class="h-link text-light">Policy </a>  &nbsp; <a href="#" class="h-link text-light"> | &nbsp; Terms</a> &nbsp; <a href="#" class="h-link text-light"> | &nbsp; Legal </a> </p>
+    <p class="text-light"> © 2023 <a target="_blank" class="h-link text-light"> Levitating Elephant <br>Technologies Private
+      Limited</a>. All rights reserved. <br>  </p>
+    
+      <div class="d-flex" style="list-style: none; cursor: pointer;">
+      <li routerLink="/privacy" data-bs-dismiss="modal" aria-label="Close"> <a class="h-link text-light">Policy</a>  &nbsp;</li>
+      <li routerLink="/terms" data-bs-dismiss="modal" aria-label="Close" ><a  class="h-link text-light"> | &nbsp; Terms</a> &nbsp; </li>
+     <li routerLink="/cookies" data-bs-dismiss="modal" aria-label="Close"> <a class="h-link text-light"> | &nbsp; Cookies </a></li>
+    </div>
+    
+
+
+
   </div>
 </div>
  </div>

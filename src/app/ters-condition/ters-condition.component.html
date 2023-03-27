@@ -4,7 +4,7 @@
 </div>
 <body class="pages">
     <div class="container">
-        <div class="d-flex py-lg-5 pb-3 pt-5 justify-content-lg-center flex-wrap menu-terms"> <a routerLink="/home"
+        <div class="d-flex py-lg-5 pb-3 pt-5 justify-content-lg-center flex-wrap menu-terms"> <a (click)="goToHome( 'footer')"
                 class="px-2 me-lg-5 back-arrow"> <svg width="32" height="16" viewBox="0 0 32 16" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -25,33 +25,33 @@
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav flex-wrap  scrol-menu">
-                            <li class="nav-item"> <a class="nav-link" aria-current="page" routerLink="#section1"> About us</a></li>
-                            <li class="nav-item"> <a class="nav-link" routerLink="#section2" >Acceptance Of Terms</a> </li>
-                            <li class="nav-item"> <a class="nav-link" href="#section3">Definitions</a> </li>
-                            <li class="nav-item"> <a class="nav-link" href="#section4">Authorized Users</a> </li>
-                            <li class="nav-item"> <a class="nav-link" href="#section5">Responsibility for Authorized
+                            <li class="nav-item"> <a class="nav-link" aria-current="page" (click)="goToPart( 'section1')"> About us</a></li>
+                            <li class="nav-item"> <a class="nav-link" (click)="goToPart( 'section2')" >Acceptance Of Terms</a> </li>
+                            <li class="nav-item"> <a class="nav-link" (click)="goToPart( 'section3')" >Definitions</a> </li>
+                            <li class="nav-item"> <a class="nav-link" (click)="goToPart( 'section4')">Authorized Users</a> </li>
+                            <li class="nav-item"> <a class="nav-link" (click)="goToPart( 'section5')">Responsibility for Authorized
                                     Users</a> </li>
-                            <li class="nav-item"> <a class="nav-link" href="#section6">Services</a> </li>
-                            <li class="nav-item"> <a class="nav-link" href="#section7">Public User Submissions</a> </li>
-                            <li class="nav-item"> <a class="nav-link" href="#section8">Acceptable Use Policy: AUP</a>
+                            <li class="nav-item"> <a class="nav-link" (click)="goToPart( 'section6')">Services</a> </li>
+                            <li class="nav-item"> <a class="nav-link" (click)="goToPart( 'section7')">Public User Submissions</a> </li>
+                            <li class="nav-item"> <a class="nav-link" (click)="goToPart( 'section8')" >Acceptable Use Policy: AUP</a>
                             </li>
-                            <li class="nav-item"> <a class="nav-link" href="#section9">Personal Information and
+                            <li class="nav-item"> <a class="nav-link" (click)="goToPart( 'section9')">Personal Information and
                                     Privacy</a> </li>
-                            <li class="nav-item"> <a class="nav-link" href="#section10">Data</a> </li>
-                            <li class="nav-item"> <a class="nav-link" href="#section11">LE Obligations</a> </li>
-                            <li class="nav-item"> <a class="nav-link" href="#section12">Prohibited Conduct</a> </li>
-                            <li class="nav-item"> <a class="nav-link" href="#section13">Disclaimer of Warranties </a>
+                            <li class="nav-item"> <a class="nav-link" (click)="goToPart( 'section10')">Data</a> </li>
+                            <li class="nav-item"> <a class="nav-link" (click)="goToPart( 'section11')">LE Obligations</a> </li>
+                            <li class="nav-item"> <a class="nav-link"(click)="goToPart( 'section12')">Prohibited Conduct</a> </li>
+                            <li class="nav-item"> <a class="nav-link" (click)="goToPart( 'section13')">Disclaimer of Warranties </a>
                             </li>
-                            <li class="nav-item"> <a class="nav-link" href="#section14">Limitation of Liabilities </a>
+                            <li class="nav-item"> <a class="nav-link" (click)="goToPart( 'section14')" >Limitation of Liabilities </a>
                             </li>
-                            <li class="nav-item"> <a class="nav-link" href="#section15">Indemnification</a> </li>
-                            <li class="nav-item"> <a class="nav-link" href="#section16">Term & Termination</a> </li>
-                            <li class="nav-item"> <a class="nav-link" href="#section17">Intellectual Property Rights</a>
+                            <li class="nav-item"> <a class="nav-link" (click)="goToPart( 'section15')">Indemnification</a> </li>
+                            <li class="nav-item"> <a class="nav-link" (click)="goToPart( 'section16')">Term & Termination</a> </li>
+                            <li class="nav-item"> <a class="nav-link" (click)="goToPart( 'section17')">Intellectual Property Rights</a>
                             </li>
-                            <li class="nav-item"> <a class="nav-link" href="#section18">Dispute Resolution</a> </li>
-                            <li class="nav-item"> <a class="nav-link" href="#section19">FORCE MAJEURE</a> </li>
-                            <li class="nav-item"> <a class="nav-link" href="#section20">Governing Law </a> </li>
-                            <li class="nav-item"> <a class="nav-link" href="#section21">Grievance Officer</a> </li>
+                            <li class="nav-item"> <a class="nav-link" (click)="goToPart( 'section18')">Dispute Resolution</a> </li>
+                            <li class="nav-item"> <a class="nav-link" (click)="goToPart( 'section19')">FORCE MAJEURE</a> </li>
+                            <li class="nav-item"> <a class="nav-link" (click)="goToPart( 'section20')" >Governing Law </a> </li>
+                            <li class="nav-item"> <a class="nav-link" (click)="goToPart( 'section21')">Grievance Officer</a> </li>
                             </ul>
                     </div>
 
@@ -533,4 +533,6 @@
             </div>
         </div>
     </div>
-  
+    <div id="footer">
+        <app-footer></app-footer>
+      </div>
