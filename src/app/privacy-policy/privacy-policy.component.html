@@ -3,7 +3,7 @@
 </div>
 <body class="pages">
   <div class="container">
-    <div class="d-flex py-lg-5 pb-3 pt-5 justify-content-lg-center flex-wrap menu-terms"> <a routerLink="/home"
+    <div class="d-flex py-lg-5 pb-3 pt-5 justify-content-lg-center flex-wrap menu-terms"> <a (click)="goToHome( 'footer')"
         class="px-2 me-lg-5 back-arrow"> <svg width="32" height="16" viewBox="0 0 32 16" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <path
@@ -20,14 +20,14 @@
             aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav flex-wrap  scrol-menu">
-              <li class="nav-item"> <a class="nav-link" aria-current="page" href="#section1">Collection of Information
+              <li class="nav-item"> <a class="nav-link" aria-current="page"   (click)="goToPart( 'section1')"  >Collection of Information
                 </a> </li>
-              <li class="nav-item"> <a class="nav-link" href="#section2"> Processing of Information </a> </li>
-              <li class="nav-item"> <a class="nav-link" href="#section3">Security</a> </li>
-              <li class="nav-item"> <a class="nav-link" href="#section4"> Cookies</a> </li>
-              <li class="nav-item"> <a class="nav-link" href="#section5">Withdrawal of Consent </a> </li>
-              <li class="nav-item"> <a class="nav-link" href="#section6">Changes to this Privacy Policy</a> </li>
-              <li class="nav-item"> <a class="nav-link" href="#section7"> Grievances</a> </li>
+              <li class="nav-item"> <a class="nav-link" (click)="goToPart( 'section2')"> Processing of Information </a> </li>
+              <li class="nav-item"> <a class="nav-link" (click)="goToPart( 'section3')"> Security</a> </li>
+              <li class="nav-item"> <a class="nav-link" (click)="goToPart( 'section4')"> Cookies</a> </li>
+              <li class="nav-item"> <a class="nav-link" (click)="goToPart( 'section5')">Withdrawal of Consent </a> </li>
+              <li class="nav-item"> <a class="nav-link" (click)="goToPart( 'section6')">Changes to this Privacy Policy</a> </li>
+              <li class="nav-item"> <a class="nav-link" (click)="goToPart( 'section7')" > Grievances</a> </li>
             </ul>
           </div>
         </nav>
@@ -88,7 +88,7 @@
         <p> <strong class="text-dark font-w500">Simple Arcana,</strong> is an autonomous automotive solution for
           Advanced Driver Assistant Systems (ADAS) and Autonomous Delivery System (ADS). </p>
         <div class="text-teram">
-          <div id="section1"></div>
+          <div><a id="section1" class="theEnd1"> </a></div>
           <div class="text-teram-title">1. Collection of Information: </div>
 
           <p>In order to enhance the user experience and provide our services, LE collects the following types of
@@ -354,5 +354,7 @@
   </div>
 
 
-
+  <div class="">
+    <app-footer></app-footer>
+  </div>
 </body>

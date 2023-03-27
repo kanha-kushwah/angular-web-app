@@ -3,7 +3,7 @@
 </div>
 <body class="pages">
     <div class="container">
-        <div class="d-flex py-lg-5 pb-3 pt-5 justify-content-lg-center flex-wrap menu-terms"> <a routerLink="/home"
+        <div class="d-flex py-lg-5 pb-3 pt-5 justify-content-lg-center flex-wrap menu-terms"> <a (click)="goToHome( 'footer')"
                 class="px-2 me-lg-5 back-arrow"> <svg width="32" height="16" viewBox="0 0 32 16" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -105,6 +105,8 @@
     </div>
 
 
-
+    <div class="">
+        <app-footer></app-footer>
+      </div>
 
 </body>

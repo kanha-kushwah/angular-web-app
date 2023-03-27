@@ -38,6 +38,8 @@ export class HeaderComponent implements OnInit {
     this.elem.classList.remove("mystyle");
   }
 
+
+
   blue = false;
   white = true;
 ngAfterContentInit() {
@@ -61,7 +63,9 @@ ngAfterContentInit() {
     ()
   }
 
-  
+  goToPart(fragment:any){
+    this.router.navigateByUrl('home#'+ fragment);
+  }
 
 }
 
