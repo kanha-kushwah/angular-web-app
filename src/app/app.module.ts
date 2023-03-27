@@ -29,7 +29,7 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
 import { CookiesComponent } from './cookies/cookies.component';
 import { TersConditionComponent } from './ters-condition/ters-condition.component';
 import { RecaptchaV3Module } from 'ng-recaptcha';
-// import { HashLocationStrategy,LocationStrategy} from '@angular/common'
+import { HashLocationStrategy,LocationStrategy} from '@angular/common'
 
 @NgModule({
   declarations: [
@@ -74,7 +74,7 @@ import { RecaptchaV3Module } from 'ng-recaptcha';
     AjaxService,
     LoaderService,
     { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
-    // {provide:LocationStrategy, useClass:HashLocationStrategy}
+    {provide:LocationStrategy, useClass:HashLocationStrategy}
   ],
   bootstrap: [AppComponent]
 })
