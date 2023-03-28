@@ -143,6 +143,7 @@ export class OpeningFillDetailsComponent implements OnInit {
     this.ajaxservice.uploadMedia(this.api.jobApplication,formData)
     .subscribe((data:any)=>{
       this.router.navigate(['/congrates']);
+      localStorage.clear();
     })
 
     //console.log('ppppppp',passData)

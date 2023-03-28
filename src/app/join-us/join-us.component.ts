@@ -61,7 +61,7 @@ export class JoinUsComponent implements OnInit {
   }
 
   submitDetails(){
-    console.log('form',this.contactDetails)
+    console.log('form',this.contactDetails.value.position)
 
     if(this.contactDetails.invalid)
     {
@@ -83,7 +83,7 @@ export class JoinUsComponent implements OnInit {
       let contactData = {
         candidateName:this.contactDetails.value.name,
         candidateEmail:this.contactDetails.value.email,
-        logState: "1",
+        logState: this.contactDetails.value.position,
         candidateDesrciption:this.contactDetails.value.description,
         submitFrom:this.title
       }

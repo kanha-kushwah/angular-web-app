@@ -84,7 +84,7 @@ export class HomeComponent implements OnInit {
       let contactData = {
         candidateName:this.contactDetails.value.name,
         candidateEmail:this.contactDetails.value.email,
-        logState: "1",
+        logState: this.contactDetails.value.position,
         candidateDesrciption:this.contactDetails.value.description,
         submitFrom:'homePage'
       }
