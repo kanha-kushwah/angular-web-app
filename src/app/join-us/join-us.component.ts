@@ -84,7 +84,7 @@ export class JoinUsComponent implements OnInit {
         candidateName:this.contactDetails.value.name,
         candidateEmail:this.contactDetails.value.email,
         logState: this.contactDetails.value.position,
-        candidateDesrciption:this.contactDetails.value.description,
+        candidateDescription:this.contactDetails.value.description,
         submitFrom:this.title
       }
       // this.router.navigate(['/']);
