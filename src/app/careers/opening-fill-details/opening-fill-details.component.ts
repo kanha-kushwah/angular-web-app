@@ -69,13 +69,30 @@ export class OpeningFillDetailsComponent implements OnInit {
   }
 
   submitDetails(){
+  let linkdinLink:any='';
+  let description:any='';
 
+console.log('getting value',this.fillDetails.value.linkdinLink,  '---',  this.fillDetails.value.description)
+
+  if(this.fillDetails.value.linkdinLink == ''){
+    linkdinLink = '0';
+  }
+  else{
+    linkdinLink = this.fillDetails.value.linkdinLink;
+  }
+
+  if(this.fillDetails.value.description == ''){
+    description = '0';
+  }
+  else{
+    description = this.fillDetails.value.description;
+  }
+
+
+  console.log('getting value',linkdinLink,  '---',  description)
 
   // const formData = new FormData();
   this.isSubmitted = true;
-  
-  console.log('valueee',this.fillDetails)
-
   if(this.fillDetails.invalid)
   {
     this.isSubmitted = true;
@@ -119,9 +136,9 @@ export class OpeningFillDetailsComponent implements OnInit {
   formData.append('candidateName',this.userDetails1.candidateName);
   formData.append('candidateEmail',this.userDetails1.candidateEmail);
   //formData.append('candidatePhone','12345');
-  formData.append('linkedinProfile',this.fillDetails.value.linkdinLink);
+  formData.append('linkedinProfile',linkdinLink);
   formData.append('resume',this.resume);
-  formData.append('professionalSummary',this.fillDetails.value.description);
+  formData.append('professionalSummary',description);
   formData.append('candidateID',this.userDetails1.candidateId);
   //formData.append('candidateID','4503');
   
@@ -146,7 +163,7 @@ export class OpeningFillDetailsComponent implements OnInit {
       localStorage.clear();
     })
 
-    //console.log('ppppppp',passData)
+    //console.log('ppppppp',formData)
   }
   // this.router.navigate(['/congrates']);
   }
