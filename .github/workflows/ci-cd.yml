@@ -16,4 +16,16 @@ jobs:
         with:
           node-version: 16
       - run: npm install --legacy-peer-deps
-      - run: npm run build      
+      - run: npm run build
+      - run: ls
+      - run: ls dist/levitating
+
+      # - name: Configure AWS credentials
+      #   uses: aws-actions/configure-aws-credentials@v2
+      #   with:
+      #     role-to-assume: arn:aws:iam::111111111111:role/my-github-actions-role-test
+      #     aws-region: ap-south-1
+      # 
+      # - name: Copy files to the test website with the AWS CLI
+      #   run: |
+      #     aws s3 sync . s3://levitatingelephant.com 
