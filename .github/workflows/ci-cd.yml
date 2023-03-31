@@ -19,11 +19,13 @@ jobs:
       - run: npm run build
 
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v1
         with:
           role-to-assume: arn:aws:iam::689954339495:role/github-role-push-to-le-bucket
           aws-region: ap-south-1
-          role-session-name: MySessionName
+          role-session-name: GithubActionsSession
+      
+      - run: aws sts get-caller-identity
       
       - name: Copy files to S3 bucket with the AWS CLI
         run: |
