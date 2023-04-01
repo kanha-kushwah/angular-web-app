@@ -37,7 +37,7 @@ jobs:
         run: echo $NOW # Gives "2022-12-11T01:42:20"        
       
       - name: Zip the build file and push to builds S3 Bucket
-        run: zip -r ${NOW}.zip dist/levitating 
+        run: zip -r build_${NOW}.zip dist/levitating 
       - run: ls
       
       #- name: Copy files to S3 bucket with the AWS CLI
