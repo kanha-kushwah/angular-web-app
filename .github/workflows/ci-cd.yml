@@ -29,8 +29,17 @@ jobs:
           aws-region: ap-south-1
           role-session-name: GithubActionsSession
       
-      - run: aws sts get-caller-identity
+      #- run: aws sts get-caller-identity
+
+      - name: Set current date as env variable
+        run: echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
+      - name: Echo current date
+        run: echo $NOW # Gives "2022-12-11T01:42:20"        
       
-      - name: Copy files to S3 bucket with the AWS CLI
-        run: |
-          aws s3 sync dist/levitating s3://dev.levitatingelephant.com
+      - name: Zip the build file and push to builds S3 Bucket
+        run: zip -r ${NOW}.zip dist/levitating 
+      - run: ls
+      
+      #- name: Copy files to S3 bucket with the AWS CLI
+      #  run: |
+      #    aws s3 sync dist/levitating s3://dev.levitatingelephant.com
