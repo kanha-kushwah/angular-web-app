@@ -32,13 +32,13 @@ jobs:
       #- run: aws sts get-caller-identity
 
       - name: Set current date as env variable
-        run: echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
-      - name: Echo current date
-        run: echo $NOW # Gives "2022-12-11T01:42:20"        
+        run: echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV         
       
       - name: Zip the build file and push to builds S3 Bucket
         run: zip -r build_${NOW}.zip dist/levitating 
-      - run: ls
+      
+      - name: Zip the build file and push to builds S3 Bucket
+        run: aws s3 cp build_${NOW}.zip s3://levitatingelephant-builds
       
       #- name: Copy files to S3 bucket with the AWS CLI
       #  run: |
