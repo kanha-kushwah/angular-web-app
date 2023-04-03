@@ -6,7 +6,7 @@ section.congrates.h-100vh {
     margin-top: 0px;
 }
 img.imag-end {
-    width: 450px;
+    width: 500px;
     position: absolute;
     right: 0;
     top: 30%;
@@ -222,17 +222,5 @@ img.imag-end {
         padding: 16px 27px;
         margin-top: 30px !important;
         min-width: 134px !important;
-    }
-    .form-congrates input {
-        background: transparent;
-        border: none;
-        border-bottom: solid 1px #000;
-        width: 98% !important;
-        padding: 15px 0px;
-        border-radius: 0;
-        transition: 0.5s !important;
-    }
-    section.congrates.h-100vh {
-        padding: 0px 15px !important;
     }
 }

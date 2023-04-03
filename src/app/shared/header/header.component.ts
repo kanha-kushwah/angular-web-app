@@ -67,6 +67,12 @@ ngAfterContentInit() {
     this.router.navigateByUrl('home#'+ fragment);
   }
 
+
+  contactUs(){
+    localStorage.setItem('join','1'); 
+    this.router.navigateByUrl('/joinus');
+  }
+
 }
 
 

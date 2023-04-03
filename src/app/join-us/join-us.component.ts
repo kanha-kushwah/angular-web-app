@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AjaxService, API } from '../common/levitating.ajaxsevice';
+import { Meta, Title } from '@angular/platform-browser';
+
+declare const SEO:any;
 
 @Component({
   selector: 'app-join-us',
@@ -17,15 +20,48 @@ export class JoinUsComponent implements OnInit {
   captcha = false;
   token: string|undefined;
   lengthD:any=0;
-  constructor(public fb:FormBuilder, public ajaxservice:AjaxService, public router:Router) { }
+  constructor(public fb:FormBuilder, public ajaxservice:AjaxService, public router:Router,
+  private titleService: Title,
+  private metaTagService: Meta) { }
 
   ngOnInit(): void { 
+
+
+
+    this.titleService.setTitle(SEO.Contact.MetaTitle);
+
+    this.metaTagService.updateTag(
+      { name:'description', content: SEO.Contact.Description }
+    );
+
+    this.metaTagService.updateTag(
+      { name: 'keywords', content: SEO.Contact.Keywords}
+    );
+
+    this.metaTagService.updateTag(
+      { name: 'title',property: "og:title", content:SEO.Contact.MetaTag }
+    );
+    
+    this.metaTagService.updateTag(
+      { property: "og:title", content:SEO.Contact.MetaTag }
+    );
+    
+    this.metaTagService.updateTag(
+      { property : "og:url", content:SEO.Contact.MetaUrl}
+    );
+    
+    
+
+
+
+
+
     let value = localStorage.getItem('join');
     this.joinValue = value;
 
     if(this.joinValue == '1')
     {
-     this.title = "JOIN ME";
+     this.title = "Contact US";
     }
     else{
       this.title = "JOIN US";

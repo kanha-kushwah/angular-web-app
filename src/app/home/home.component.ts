@@ -4,7 +4,9 @@ import { Router } from '@angular/router';
 import { AjaxService, API } from '../common/levitating.ajaxsevice';
 import { Directive, ElementRef, HostListener } from '@angular/core';
 import * as AOS from 'aos';
+import { Meta, Title } from '@angular/platform-browser';
 
+declare const SEO:any;
 
 @Component({
   selector: 'app-home',
@@ -18,9 +20,33 @@ export class HomeComponent implements OnInit {
  captcha = false;
  lengthD:any=0;
  token: string|undefined;
-  constructor(public fb:FormBuilder, public ajaxservice:AjaxService, public router:Router,private el: ElementRef) {  this.token = undefined; }
+  constructor(public fb:FormBuilder, public ajaxservice:AjaxService, public router:Router,private el: ElementRef,
+    private titleService: Title,
+    private metaTagService: Meta) {  this.token = undefined; }
 
   ngOnInit(): void {
+
+
+    this.titleService.setTitle(SEO.Home.MetaTag);
+
+    this.metaTagService.updateTag(
+      { name:'description', content: SEO.Home.Description }
+    );
+
+    this.metaTagService.updateTag(
+      { name: 'keywords', content: SEO.Home.Keywords}
+    );
+
+    this.metaTagService.updateTag(
+      { name: 'title',property: "og:title", content:SEO.Home.MetaTag }
+    );
+
+    this.metaTagService.updateTag(
+      { property : "og:url", content:SEO.Home.MetaUrl}
+    );
+    
+    
+
     localStorage.setItem('join','0'); 
     this.contactDetails = this.fb.group({
       name: ['',[Validators.required]],

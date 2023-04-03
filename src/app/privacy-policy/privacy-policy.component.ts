@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import { Meta, Title } from '@angular/platform-browser';
 
+declare const SEO:any;
 
 @Component({
   selector: 'app-privacy-policy',
@@ -9,9 +11,36 @@ import {Router} from '@angular/router';
 })
 export class PrivacyPolicyComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,
+    private titleService: Title,
+    private metaTagService: Meta) { }
 
   ngOnInit(): void {
+  
+  
+    this.titleService.setTitle(SEO.PrivacyPolicy.MetaTitle);
+
+    this.metaTagService.updateTag(
+      { name:'description', content: SEO.PrivacyPolicy.Description }
+    );
+
+    this.metaTagService.updateTag(
+      { name: 'keywords', content: SEO.PrivacyPolicy.Keywords}
+    );
+
+    this.metaTagService.updateTag(
+      { name: 'title',property: "og:title", content:SEO.PrivacyPolicy.MetaTag }
+    );
+    
+    this.metaTagService.updateTag(
+      { property: "og:title", content:SEO.PrivacyPolicy.MetaTag }
+    );
+    
+    this.metaTagService.updateTag(
+      { property : "og:url", content:SEO.PrivacyPolicy.MetaUrl}
+    );
+    
+  
   }
 
   goToPart(fragment:any){
