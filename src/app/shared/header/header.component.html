@@ -5,9 +5,9 @@
         <div class="col-lg-10 col-8">
           <!-- *ngIf=" loaderservice.currentUrl == '/home' && white && !blue" -->
           <!-- *ngIf=" loaderservice.currentUrl == '/home' && !white && blue" -->
-          <img  routerLink="/" class="logo-after"  src="../../../assets/images/logo.png" alt="" width="210" *ngIf=" (loaderservice.currentUrl == '/home' || loaderservice.currentUrl == '/') && white && !blue">
-          <img  routerLink="/" class="logofix" src="../../../assets/images/logo-color.png" alt=""  width="210" *ngIf=" (loaderservice.currentUrl == '/home' || loaderservice.currentUrl == '/') && !white && blue">
-          <img  routerLink="/" class="logofix" src="../../../assets/images/logo-color.png" alt=""  width="210" *ngIf=" (loaderservice.currentUrl != '/home' && loaderservice.currentUrl != '/')">
+          <img  routerLink="/" class="logo-after"  src="../../../assets/images/logo.png" alt="levitating elephant logo" width="210" *ngIf=" (loaderservice.currentUrl == '/home' || loaderservice.currentUrl == '/') && white && !blue">
+          <img  routerLink="/" class="logofix" src="../../../assets/images/logo-color.png" alt="levitating elephant logo"  width="210" *ngIf=" (loaderservice.currentUrl == '/home' || loaderservice.currentUrl == '/') && !white && blue">
+          <img  routerLink="/" class="logofix" src="../../../assets/images/logo-color.png" alt="levitating elephant logo"  width="210" *ngIf=" (loaderservice.currentUrl != '/home' && loaderservice.currentUrl != '/')">
       </div>
         <div class="col-lg-2 col-4 text-end">
           <button  (click)="openNav()"  type="button" class="btn menu-btn p-0" data-bs-toggle="modal" data-bs-target="#exampleModal"  *ngIf=" (loaderservice.currentUrl == '/home' || loaderservice.currentUrl == '/') && white && !blue">
@@ -44,15 +44,15 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header border-0 justify-content-start">
-        <button type="button" class="btn-close m-0 text-white" data-bs-dismiss="modal" aria-label="Close"><img src="../../../assets/images/close.png" width="25"></button>
+        <button type="button" class="btn-close m-0 text-white" data-bs-dismiss="modal" aria-label="Close"><img src="../../../assets/images/close.png" width="25" alt="close icon"></button>
       </div>
       <div class="modal-body">
         <ul class="menu-right-nav">
-          <li class="menu-right-nav-item" data-bs-dismiss="modal" aria-label="Close" routerLink="/"> <a>Home</a> </li>
-          <li class="menu-right-nav-item" data-bs-dismiss="modal" aria-label="Close" (click)="goToPart('about')"> <a>About</a> </li>
-          <li class="menu-right-nav-item" data-bs-dismiss="modal" aria-label="Close" (click)="goToPart('product')"> <a>PRODUCTS</a></li>
-          <li class="menu-right-nav-item" data-bs-dismiss="modal" aria-label="Close" (click)="goToPart('carrer1')" > <a>CAREERS</a></li>
-          <li class="menu-right-nav-item" data-bs-dismiss="modal" aria-label="Close" (click)="contactUs()" > <a>Contact</a></li>
+          <li class="menu-right-nav-item" data-bs-dismiss="modal" aria-label="Close" routerLink="/"> Home</li>
+          <li class="menu-right-nav-item" data-bs-dismiss="modal" aria-label="Close" (click)="goToPart('about')"> About </li>
+          <li class="menu-right-nav-item" data-bs-dismiss="modal" aria-label="Close" (click)="goToPart('product')"> PRODUCTS</li>
+          <li class="menu-right-nav-item" data-bs-dismiss="modal" aria-label="Close" (click)="goToPart('carrer1')" > CAREERS</li>
+          <li class="menu-right-nav-item" data-bs-dismiss="modal" aria-label="Close" (click)="contactUs()" > Contact</li>
         </ul>
 
         <div class="menu-footer right-boxed">
@@ -71,9 +71,9 @@
       Limited</a>. All rights reserved. <br>  </p>
     
       <div class="d-flex" style="list-style: none; cursor: pointer;">
-      <li routerLink="/privacy" data-bs-dismiss="modal" aria-label="Close"> <a class="h-link text-light">Privacy Policy </a>  &nbsp;</li>
-      <li routerLink="/terms" data-bs-dismiss="modal" aria-label="Close" ><a  class="h-link text-light"> | &nbsp; Terms of Service</a> &nbsp; </li>
-     <li routerLink="/cookies" data-bs-dismiss="modal" aria-label="Close"> <a class="h-link text-light"> | &nbsp; Cookies </a></li>
+      <li routerLink="/privacy" data-bs-dismiss="modal" aria-label="Close"> <p class="h-link text-light">Privacy Policy </p>  &nbsp;</li>
+      <li routerLink="/terms" data-bs-dismiss="modal" aria-label="Close" ><p  class="h-link text-light"> | &nbsp; Terms of Service</p> &nbsp; </li>
+     <li routerLink="/cookies" data-bs-dismiss="modal" aria-label="Close"> <p class="h-link text-light"> | &nbsp; Cookies </p></li>
     </div>
     
 

@@ -20,7 +20,7 @@
 
   
   
-  ul.menu-right-nav li a {
+  ul.menu-right-nav li  {
 	  cursor: pointer;
   }
   
@@ -32,7 +32,7 @@
   #myHeader{
 	  transition: 0.5s;
   }
-  .sidenav a {
+  .sidenav li {
 	padding: 8px 8px 8px 32px;
 	text-decoration: none;
 	font-size: 25px;
@@ -131,7 +131,7 @@
 	  padding-left: 6px;
   }
   .menu-right-nav li{list-style: none;}
-  .menu-right-nav a {
+  .menu-right-nav  {
 	  text-decoration: none;
 	  color: #FFF;
 	  transition: 0.5s;
@@ -140,6 +140,7 @@
 	  display: inline-block;
 	  text-transform: uppercase;
 	  font-size: 18px;
+	  line-height: 60px;
   }
   .modal-title {
   font-family: 'Century Gothic';
