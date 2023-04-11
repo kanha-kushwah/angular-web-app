@@ -5,6 +5,8 @@
 p{
     margin: 0;
 }
+
+
 section.Eligibility {
     min-height: 550px;
     align-items: center;
@@ -169,6 +171,7 @@ button.apply.me-4 {
 .row.align-items-center.mt-4,.row.align-items-center.mt-2{
     padding: 20px 40px;
 }
+
 .p p {
     font-family: 'Poppins';
     font-style: normal;
@@ -178,7 +181,15 @@ button.apply.me-4 {
     color: rgba(30, 30, 30, 0.49);
     padding: 40px 0px;
 }
-
+.fx-li p {
+    font-weight: 400 !important;
+    font-size: 20px !important;
+    line-height: 185.7% !important;
+    color: rgba(30, 30, 30, 0.5490196078) !important;
+}
+.h6-title p {
+    font-size: 20px;
+}
 
 /* CAREER  end */
 @media(max-width:1400px){
