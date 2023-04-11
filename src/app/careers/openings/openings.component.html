@@ -1,12 +1,16 @@
 
 <div class="container mb-5">
+
+    <!-- <div [innerHtml]="myHtmlProperty"></div> -->
+
+    
     <div class="p"><p>The following are the openings that you can apply for.</p></div>
 <div class="accordion accordion-flush"  *ngFor="let job of positionData;let i=index" id="accordionFlushExample">
     <div class="accordion-item">
         <h2 class="accordion-header" id="flush-headingOne">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                 [attr.data-bs-target]="'#flush-collapseOne'+job.jobId" aria-expanded="false" [attr.aria-controls]="'flush-collapseOne'+job.jobId">
-                {{job.jobTitle}}
+               <div class="title-job"> {{job.jobTitle}}</div> <div class="title-job ms-4 " style="font-size: 14px; width: 50%;">  {{job.jobLocation}}</div>
             </button>
         </h2>
 
@@ -25,6 +29,9 @@
                     </div>
                 </div>
 
+
+                
+
                 <div class="row align-items-center acco-body mt-4">
                     <div class="col-lg-12 h6-title align-self-center">
                         <h6><p><b>Requirement:</b> {{job.jobRequirement}}<br></p>
@@ -40,38 +47,26 @@
 
                 <div class="row align-items-center mt-4">
                     <div class="col-lg-12 h6-title">
-                        <h6><b>Responsibilities of {{job.jobTitle}}</b>
-                            <ul class="pt-3 col-pt-0">
-                                <li>
-                                   {{job.jobDescription}} 
-                                </li>
-            
-                            </ul>
-                        </h6>
+                        <!-- <h6 class="mb-3"><b>Responsibilities of {{job.jobTitle}}</b> </h6> -->
+                        <div class="fx-li" style=" font-weight: 400 !important;
+                        font-size: 20px !important;
+                        line-height: 185.7% !important;
+                        color: rgba(30, 30, 30, 0.5490196078) !important;" [innerHtml]="job.jobDescription">  </div>
                     </div>
                 </div>
 
 
                 <div class="row align-items-center mt-2">
                     <div class="col-lg-12 h6-title">
-                        <h6><b> Skills and Qualifications</b><br>
-                            <ul class="pt-3">
-                                <li> 
-                                {{job.skillsQualifications}}
-                                </li>
-                            </ul>
-                        </h6>
+                        <!-- <h6 class="mb-3"><b> Skills and Qualifications</b><br> </h6> -->
+                        <div style=" font-weight: 400 !important;
+                        font-size: 20px !important;
+                        line-height: 185.7% !important;
+                        color: rgba(30, 30, 30, 0.5490196078) !important;" [innerHtml]="job.skillsQualifications"></div>
                     </div>
-
                 </div>
-
-
-
-
             </div>
         </div>
-
     </div>
-
 </div>
 </div>
