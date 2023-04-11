@@ -10,7 +10,7 @@
         <h2 class="accordion-header" id="flush-headingOne">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                 [attr.data-bs-target]="'#flush-collapseOne'+job.jobId" aria-expanded="false" [attr.aria-controls]="'flush-collapseOne'+job.jobId">
-                {{job.jobTitle}}
+               <div class="title-job"> {{job.jobTitle}}</div> <div class="title-job ms-4 " style="font-size: 14px; width: 50%;">  {{job.jobLocation}}</div>
             </button>
         </h2>
 
@@ -64,16 +64,9 @@
                         line-height: 185.7% !important;
                         color: rgba(30, 30, 30, 0.5490196078) !important;" [innerHtml]="job.skillsQualifications"></div>
                     </div>
-
                 </div>
-
-
-
-
             </div>
         </div>
-
     </div>
-
 </div>
 </div>
