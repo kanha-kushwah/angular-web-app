@@ -3,7 +3,7 @@ name: Build and deploy LE-WEBAPP
 on:
   push:
     branches:
-      - development
+      - main
   workflow_dispatch:
 
 jobs:
@@ -18,9 +18,10 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
       - run: npm install --legacy-peer-deps
       - run: npm run build
+      - run: echo ${github.event.pull_request.merged}
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
@@ -29,17 +30,10 @@ jobs:
           aws-region: ap-south-1
           role-session-name: GithubActionsSession
       
-      #- run: aws sts get-caller-identity
-
-      - name: Set current date as env variable
-        run: echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV         
-      
-      - name: Zip the generated build files
-        run: zip -r build_${NOW}.zip dist/levitating 
-      
-      - name: Copy the build zip file to S3 Bucket
-        run: aws s3 cp build_${NOW}.zip s3://levitatingelephant-builds/le/le-webapp/
-      
+      # Copying the build files to S3 Bucket
       - name: Copy files to S3 bucket with the AWS CLI
-        run: |
-          aws s3 sync dist/levitating s3://dev.levitatingelephant.com
+        run: aws s3 sync dist/levitating s3://levitatingelephant.com
+
+      # Clears the Cloudfront Cache
+      - name: Create Invalidation - Cloudfront
+        run: aws cloudfront create-invalidation --distribution-id E907GFFRUMV3 --paths "/*"
