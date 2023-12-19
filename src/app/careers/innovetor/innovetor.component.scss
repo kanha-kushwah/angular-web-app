@@ -11,6 +11,36 @@ section {
     color: #5F3A96 !important
 }
 
+.fx-set {
+    box-shadow: rgb(151 158 156 / 37%) 0px 8px 24px;
+    box-shadow: rgba(151, 158, 156, 0.37) 0px 8px 24px;
+    // background: #502e8b;
+    border-radius: 12px;
+    justify-content: center;
+}
+
+h3.apply-h3 {
+    font-family: "poppins";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 134.66%;
+    color: #5F3A96;
+}
+
+
+.fx-set img{
+    width: 80%;
+    text-align: center;
+}
+h3.apply-h3.d-flex.align-items-center {
+    font-family: "poppins";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 134.66%;
+    color: #5F3A96;
+}
 .banner-home h1 {
     font-family: 'Century Gothic';
     color: #5F3A96;

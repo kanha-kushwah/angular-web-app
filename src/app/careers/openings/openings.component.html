@@ -1,72 +1,48 @@
 
-<div class="container mb-5">
 
-    <!-- <div [innerHtml]="myHtmlProperty"></div> -->
-
-    
-    <div class="p"><p>The following are the openings that you can apply for.</p></div>
-<div class="accordion accordion-flush"  *ngFor="let job of positionData;let i=index" id="accordionFlushExample">
-    <div class="accordion-item">
-        <h2 class="accordion-header" id="flush-headingOne">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                [attr.data-bs-target]="'#flush-collapseOne'+job.jobId" aria-expanded="false" [attr.aria-controls]="'flush-collapseOne'+job.jobId">
-               <div class="title-job"> {{job.jobTitle}}</div> <div class="title-job ms-4 " style="font-size: 14px; width: 50%;">  {{job.jobLocation}}</div>
-            </button>
-        </h2>
-
-        <div [id]="'flush-collapseOne'+job.jobId" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
-            [attr.data-bs-parent]="'#accordionFlushExample'+job.jobId">
-            <div class="accordion-body">
-
-                <div class="row align-items-center acco-body">
-                    <div class="col-lg-6 col-12">
-                        <h4 class="fix-head-h4">{{job.jobTitle}}</h4>
-                    </div>
-                    <div class="col-lg-6 col-12 d-flex justify-content-end align-items-center">
-                        <div class="btn "><button class="apply me-4" routerLink="/apply" (click)="appliJob(job.jobId,job.jobTitle)">Apply</button> </div>
-                        <div class="share"><span class="share-img me-3"><img src="../../../assets/images/share.png" alt=""></span>
-                            Share</div>
-                    </div>
-                </div>
+<section class="py-5">
+  <div class="pb-5 mb-5">
+    <div class="container">
+      <div class="row " >
 
 
-                
+        
+        <div class="col-lg-8">
+           
 
-                <div class="row align-items-center acco-body mt-4">
-                    <div class="col-lg-12 h6-title align-self-center">
-                        <h6><p><b>Requirement:</b> {{job.jobRequirement}}<br></p>
-                            <p> <b> Position:</b> {{job.jobTitle}}<br></p>
-                            <p> <b> Experience:</b> {{job.requiredExperience}}<br></p>
-                            <p>  <b> Location:</b> {{job.jobLocation}}<br></p>
-                            <p>  <b> CTC:</b> {{job.costTocompany}}</p>
-                        </h6>
-                    </div>
-
-                </div>
-
-
-                <div class="row align-items-center mt-4">
-                    <div class="col-lg-12 h6-title">
-                        <!-- <h6 class="mb-3"><b>Responsibilities of {{job.jobTitle}}</b> </h6> -->
-                        <div class="fx-li" style=" font-weight: 400 !important;
-                        font-size: 20px !important;
-                        line-height: 185.7% !important;
-                        color: rgba(30, 30, 30, 0.5490196078) !important;" [innerHtml]="job.jobDescription">  </div>
-                    </div>
-                </div>
-
-
-                <div class="row align-items-center mt-2">
-                    <div class="col-lg-12 h6-title">
-                        <!-- <h6 class="mb-3"><b> Skills and Qualifications</b><br> </h6> -->
-                        <div style=" font-weight: 400 !important;
-                        font-size: 20px !important;
-                        line-height: 185.7% !important;
-                        color: rgba(30, 30, 30, 0.5490196078) !important;" [innerHtml]="job.skillsQualifications"></div>
-                    </div>
-                </div>
-            </div>
+          <div class="text">
+            <h3 class="apply-h3 d-flex align-items-center mb-3">
+              Application Development made easy!
+            </h3>
         </div>
+
+          <p class="mb-3">ORKO is a cloud based no-code application builder that allows any team head, project leader or a business owner to develop and publish smart business applications.</p>
+
+           <p class="mb-3"> The idea behind ORKO is to democratize the accessibility of application development to all professionals. The intuitive design, the drag and drop tools and an easy to use integration interface makes any kind of web application development on ORKO super easy.Business leaders, Process Managers, Project Managers or Developers can use ORKO to build and publish cloud applications within hours. </p>
+            
+          <p class="mb-3"> ORKO helps cut down on development time and developers hiring cost. Finally you have an application that allows you to build an application that you actually want.
+            </p>
+        </div>
+
+
+
+        <div class="col-md-4 d-flex align-items-center fx-set">
+            <img src="../../../assets/images/simplearcana.svg" alt="">
+          </div>
+
+          <div class="col-md-12">
+            <p><u><b>Go to website</b></u></p>
+          </div>
+
+          <div class="col-md-12 pt-5">
+            <p>*Simple Arcana is currently in research and prototyping stage</p>
+          </div>
+
+        
+          
+      </div>
     </div>
-</div>
-</div>
+  </div>
+  
+
+</section>
